@@ -304,7 +304,7 @@ if __name__ == "__main__":
 
 
 # ── Static Frontend (must be last) ───────────────────────────────
-DIST_DIR = Path(__file__).resolve().parent.parent / "UI" / "dist"
+DIST_DIR = Path(__file__).resolve().parent.parent / "UI" / "dist" / "client"
 
 if DIST_DIR.exists():
     app.mount("/assets", StaticFiles(directory=DIST_DIR / "assets"), name="assets")
@@ -314,4 +314,4 @@ if DIST_DIR.exists():
         file_path = DIST_DIR / full_path
         if file_path.is_file():
             return FileResponse(file_path)
-        return FileResponse(DIST_DIR / "index.html")
+        return FileResponse(DIST_DIR / "_shell.html")
