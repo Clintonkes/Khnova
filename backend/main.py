@@ -1,14 +1,11 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 from datetime import datetime, timezone
 import time
 import random
 import string
 import os
-from pathlib import Path
 
 from database import init_db, get_db, Booking, Contact, Admin
 from schemas import (
@@ -28,6 +25,9 @@ origins = [
     "http://localhost:5173",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
+    "https://alanrichllc.com",
+    "https://www.alanrichllc.com",
+    "https://clintonkes.github.io",
 ]
 render_url = os.getenv("RENDER_EXTERNAL_URL")
 if render_url:
@@ -301,17 +301,3 @@ def dashboard_stats(
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
-
-
-# ── Static Frontend (must be last) ───────────────────────────────
-DIST_DIR = Path(__file__).resolve().parent.parent / "UI" / "dist" / "client"
-
-if DIST_DIR.exists():
-    app.mount("/assets", StaticFiles(directory=DIST_DIR / "assets"), name="assets")
-
-    @app.get("/{full_path:path}")
-    async def serve_spa(full_path: str):
-        file_path = DIST_DIR / full_path
-        if file_path.is_file():
-            return FileResponse(file_path)
-        return FileResponse(DIST_DIR / "_shell.html")
