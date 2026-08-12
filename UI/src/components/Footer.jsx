@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
 import { Leaf, MapPin, Mail } from "lucide-react";
+import { scrollToSection } from "@/lib/scroll";
 
 export default function Footer() {
   return (
@@ -24,12 +25,12 @@ export default function Footer() {
         <div>
           <h4 className="font-bricolage text-cm-cream text-lg font-extrabold mb-4">Services</h4>
           <ul className="space-y-2 font-inter text-sm">
-            <li><a href="#cm-services" className="hover:text-cm-rust">Lawn Mowing</a></li>
-            <li><a href="#cm-services" className="hover:text-cm-rust">Precision Edging</a></li>
-            <li><a href="#cm-services" className="hover:text-cm-rust">Seasonal Clean-Up</a></li>
-            <li><a href="#cm-services" className="hover:text-cm-rust">Yard & Landscape Care</a></li>
+            <li><button type="button" onClick={() => scrollToSection("cm-services")} className="bg-transparent border-0 p-0 cursor-pointer hover:text-cm-rust">Lawn Mowing</button></li>
+            <li><button type="button" onClick={() => scrollToSection("cm-services")} className="bg-transparent border-0 p-0 cursor-pointer hover:text-cm-rust">Precision Edging</button></li>
+            <li><button type="button" onClick={() => scrollToSection("cm-services")} className="bg-transparent border-0 p-0 cursor-pointer hover:text-cm-rust">Seasonal Clean-Up</button></li>
+            <li><button type="button" onClick={() => scrollToSection("cm-services")} className="bg-transparent border-0 p-0 cursor-pointer hover:text-cm-rust">Yard & Landscape Care</button></li>
           </ul>
-          <a href="#cm-quote" className="inline-block mt-5 px-5 py-2.5 rounded-full bg-cm-rust text-cm-cream font-inter font-semibold text-sm hover:bg-cm-cream hover:text-cm-ink transition">Free Quote</a>
+          <button type="button" onClick={() => scrollToSection("cm-quote")} className="inline-block mt-5 px-5 py-2.5 rounded-full bg-cm-rust border-0 cursor-pointer text-cm-cream font-inter font-semibold text-sm hover:bg-cm-cream hover:text-cm-ink transition">Free Quote</button>
         </div>
       </div>
       <div className="border-t border-cm-cream/10 mt-12 pt-6 max-w-[1320px] mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3 font-inter text-xs text-cm-cream/50">

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { scrollToSection } from "@/lib/scroll";
 
 const HERO = "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/90e9253db_generated_image.png";
 
@@ -26,12 +27,12 @@ export default function Hero() {
           Carmstrong LLC brings reliable, detail-driven lawncare to Center Line and the Metro Detroit area: mowing, edging, seasonal clean-ups, and full yard care you can count on.
         </motion.p>
         <motion.div initial="hidden" animate="show" variants={fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="flex flex-wrap justify-center gap-4 mt-9">
-          <a href="#cm-quote" className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-cm-rust text-cm-cream font-inter font-semibold hover:bg-cm-forest transition shadow-lg shadow-cm-rust/20">
+          <button type="button" onClick={() => scrollToSection("cm-quote")} className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-cm-rust border-0 cursor-pointer text-cm-cream font-inter font-semibold hover:bg-cm-forest transition shadow-lg shadow-cm-rust/20">
             <ArrowRight size={18} /> Get a Free Quote
-          </a>
-          <a href="#cm-services" className="inline-flex items-center gap-2 px-7 py-4 rounded-full border-2 border-cm-forest/15 text-cm-forest font-inter font-semibold hover:bg-cm-forest hover:text-cm-cream transition">
+          </button>
+          <button type="button" onClick={() => scrollToSection("cm-services")} className="inline-flex items-center gap-2 px-7 py-4 rounded-full border-2 border-cm-forest/15 bg-transparent cursor-pointer text-cm-forest font-inter font-semibold hover:bg-cm-forest hover:text-cm-cream transition">
             Our Services
-          </a>
+          </button>
         </motion.div>
       </div>
       <div className="relative max-w-[1320px] mx-auto px-6 lg:px-8 pb-24">

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Scissors, Leaf, Snowflake, TreePine, ArrowRight } from "lucide-react";
+import { scrollToSection } from "@/lib/scroll";
 
 const SERVICES = [
   { n: "01", icon: Scissors, t: "Lawn Mowing", d: "Weekly or bi-weekly cuts with clean, even lines tuned to Michigan's growing season.", img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/907b3e4fd_generated_image.png" },
@@ -39,9 +40,9 @@ export default function Services() {
                 <span className="font-bricolage text-cm-rust/40 text-6xl font-extrabold leading-none">{s.n}</span>
                 <h3 className="font-bricolage text-cm-forest text-3xl md:text-4xl font-extrabold mt-3">{s.t}</h3>
                 <p className="text-cm-ink/65 font-inter text-lg mt-4 max-w-md leading-relaxed">{s.d}</p>
-                <a href="#cm-quote" className="inline-flex items-center gap-2 mt-6 text-cm-rust font-inter font-semibold group">
+                <button type="button" onClick={() => scrollToSection("cm-quote")} className="inline-flex items-center gap-2 mt-6 bg-transparent border-0 cursor-pointer text-cm-rust font-inter font-semibold group">
                   Get a quote <ArrowRight size={18} className="group-hover:translate-x-1 transition" />
-                </a>
+                </button>
               </div>
             </motion.div>
           ))}

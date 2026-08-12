@@ -35,6 +35,12 @@ export default function Quote() {
     setStatus("success");
   }
 
+  function reset() {
+    setForm({ name: "", email: "", phone: "", address: "", service: OPTIONS[0], notes: "" });
+    setError(null);
+    setStatus("idle");
+  }
+
   const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } };
 
   return (
@@ -54,6 +60,9 @@ export default function Quote() {
               <div className="w-16 h-16 rounded-full bg-cm-rust mx-auto mb-5 flex items-center justify-center"><Check className="text-cm-cream" size={30} /></div>
               <h3 className="font-bricolage text-cm-forest text-2xl font-extrabold mb-2">Thank you, {form.name || "neighbor"}!</h3>
               <p className="text-cm-ink/70 font-inter">We'll reach out within one business day to schedule your free quote.</p>
+              <button type="button" onClick={reset} className="mt-8 inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-cm-forest/15 bg-transparent cursor-pointer text-cm-forest font-inter font-semibold hover:bg-cm-forest hover:text-cm-cream transition">
+                Submit another quote
+              </button>
             </div>
           ) : (
             <form onSubmit={submit} className="grid md:grid-cols-2 gap-5">
