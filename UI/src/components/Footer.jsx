@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@tanstack/react-router";
 import { Leaf, MapPin, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -31,9 +32,10 @@ export default function Footer() {
           <a href="#cm-quote" className="inline-block mt-5 px-5 py-2.5 rounded-full bg-cm-rust text-cm-cream font-inter font-semibold text-sm hover:bg-cm-cream hover:text-cm-ink transition">Free Quote</a>
         </div>
       </div>
-      <div className="border-t border-cm-cream/10 mt-12 pt-6 max-w-[1320px] mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-3 font-inter text-xs text-cm-cream/50">
+      <div className="border-t border-cm-cream/10 mt-12 pt-6 max-w-[1320px] mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3 font-inter text-xs text-cm-cream/50">
         <span>© {new Date().getFullYear()} Carmstrong LLC. All rights reserved.</span>
         <span>Center Line · Warren · Metro Detroit, MI</span>
+        <Link to="/admin" className="hover:text-cm-rust">Staff Login</Link>
       </div>
     </footer>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 import { Menu, X, Leaf } from "lucide-react";
 
 const LINKS = [
@@ -31,6 +32,7 @@ export default function Navbar() {
           {LINKS.map((l) => (
             <a key={l.h} href={l.h} className={`text-sm font-medium transition ${scrolled ? "text-cm-cream/80 hover:text-cm-rust" : "text-cm-ink/70 hover:text-cm-rust"}`}>{l.l}</a>
           ))}
+          <Link to="/contact" className={`text-sm font-medium transition ${scrolled ? "text-cm-cream/80 hover:text-cm-rust" : "text-cm-ink/70 hover:text-cm-rust"}`}>Contact</Link>
           <a href="#cm-quote" className="px-5 py-2.5 rounded-full bg-cm-rust text-cm-cream font-semibold text-sm hover:bg-cm-forest transition">Free Quote</a>
         </nav>
         <button className={`md:hidden ${scrolled ? "text-cm-cream" : "text-cm-forest"}`} onClick={() => setOpen(!open)}>{open ? <X size={24} /> : <Menu size={24} />}</button>
@@ -41,6 +43,7 @@ export default function Navbar() {
             {LINKS.map((l) => (
               <a key={l.h} href={l.h} onClick={() => setOpen(false)} className="text-cm-cream/85 py-2">{l.l}</a>
             ))}
+            <Link to="/contact" onClick={() => setOpen(false)} className="text-cm-cream/85 py-2">Contact</Link>
             <a href="#cm-quote" onClick={() => setOpen(false)} className="text-center px-5 py-3 rounded-full bg-cm-rust text-cm-cream font-semibold">Free Quote</a>
           </div>
         </motion.div>
