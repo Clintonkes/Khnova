@@ -6,7 +6,6 @@ export default defineConfig({
     spa: { enabled: true, prerender: { enabled: false } },
   },
   vite: {
-    base: "/carmstrong/",
     server: {
       proxy: {
         "/api": {
