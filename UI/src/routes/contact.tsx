@@ -3,15 +3,15 @@ import { SiteNav, SiteFooter, BUSINESS } from "@/components/site-layout";
 import { useState } from "react";
 import { z } from "zod";
 import { apiPost } from "@/lib/api";
-import { ArrowRight, CheckCircle2, Phone, Mail, MapPin, Clock, Loader2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, MapPin, Clock, Loader2 } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Alanrich LLC Lawn Care" },
-      { name: "description", content: "Get in touch with Alanrich LLC lawn care in Groves, TX. Call (469) 650-2595 or send us a message." },
-      { property: "og:title", content: "Contact — Alanrich LLC" },
-      { property: "og:description", content: "Reach our lawn care team in Groves, TX." },
+      { title: "Contact · Carmstrong LLC Lawn Care" },
+      { name: "description", content: "Get in touch with Carmstrong LLC lawn care in Center Line, MI. Email us or send a message." },
+      { property: "og:title", content: "Contact · Carmstrong LLC" },
+      { property: "og:description", content: "Reach our lawn care team in Center Line, MI." },
     ],
   }),
   component: ContactPage,
@@ -45,7 +45,7 @@ function ContactPage() {
       });
     } catch {
       setStatus("error");
-      setError("Something went wrong. Please call us.");
+      setError("Something went wrong. Please try again or email us.");
       return;
     }
     setStatus("success");
@@ -63,7 +63,7 @@ function ContactPage() {
               We'd love to hear from you.
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              Questions, feedback, or a special request? Reach out below or call us directly — we respond fast.
+              Questions, feedback, or a special request? Reach out below and we'll respond fast.
             </p>
           </div>
         </section>
@@ -72,10 +72,9 @@ function ContactPage() {
           <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2">
             <div className="space-y-6">
               {[
-                { icon: Phone, label: "Call us", value: BUSINESS.phone, href: BUSINESS.phoneHref },
                 { icon: Mail, label: "Email", value: BUSINESS.email, href: `mailto:${BUSINESS.email}` },
                 { icon: MapPin, label: "Address", value: BUSINESS.address },
-                { icon: Clock, label: "Hours", value: "Mon–Fri 7am–7pm · Sat 8am–5pm" },
+                { icon: Clock, label: "Hours", value: "Mon to Fri 7am to 7pm · Sat 8am to 5pm" },
               ].map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4 rounded-2xl border border-primary/10 bg-card p-6">
                   <div className="grid size-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
@@ -93,7 +92,7 @@ function ContactPage() {
               ))}
               <div className="rounded-3xl bg-primary p-8 text-primary-foreground">
                 <h3 className="font-display text-lg font-bold">Need service quickly?</h3>
-                <p className="mt-2 text-sm text-primary-foreground/70">Skip the form — book your service and we'll respond within 24 hours.</p>
+                <p className="mt-2 text-sm text-primary-foreground/70">Skip the form: book your service and we'll respond within 24 hours.</p>
                 <Link to="/book" className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-bold text-accent-foreground">
                   Book Now <ArrowRight className="size-4" />
                 </Link>

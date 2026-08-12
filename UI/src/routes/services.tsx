@@ -5,8 +5,8 @@ import { Scissors, Sprout, Trees, Leaf, Wrench, ArrowRight } from "lucide-react"
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Alanrich LLC" },
-      { name: "description", content: "Professional lawn mowing, edging, trimming, cleanup, and seasonal care in Groves, TX." },
+      { title: "Services · Carmstrong LLC" },
+      { name: "description", content: "Professional lawn mowing, edging, trimming, cleanup, and seasonal care in Center Line, MI." },
     ],
   }),
   component: ServicesPage,
@@ -18,7 +18,7 @@ const services = [
   { icon: Leaf, title: "Yard Cleanup", desc: "Full-property leaf removal, debris haul-off, and post-storm resets that leave your yard spotless." },
   { icon: Trees, title: "Hedge & Shrub Care", desc: "Architectural shaping, pruning, and health-focused maintenance for hedges and ornamentals." },
   { icon: Sprout, title: "Fertilization & Weeds", desc: "Season-tuned feeding programs and targeted pre- and post-emergent weed control." },
-  { icon: Wrench, title: "Seasonal Care", desc: "Spring startup, summer heat management, and fall winterization built for Southeast Texas." },
+  { icon: Wrench, title: "Seasonal Care", desc: "Spring startup, summer maintenance, and fall winterization built for Michigan's seasons." },
 ];
 
 function ServicesPage() {
@@ -33,7 +33,7 @@ function ServicesPage() {
               A full studio of lawn craft.
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              Everything your property needs — from precision mowing to seasonal care — under one roof.
+              Everything your property needs, from precision mowing to seasonal care, under one roof.
             </p>
           </div>
         </section>

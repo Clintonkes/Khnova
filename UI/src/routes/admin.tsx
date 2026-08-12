@@ -6,7 +6,7 @@ import { Leaf, LogOut, Loader2, Calendar, Mail, RefreshCw, Trash2, CheckCircle2,
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
-      { title: "Admin — Alanrich LLC" },
+      { title: "Admin · Carmstrong LLC" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -29,7 +29,7 @@ function AdminPage() {
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem("alanrich_admin_token");
+    const token = localStorage.getItem("carmstrong_admin_token");
     if (!token) {
       setChecking(false);
       return;
@@ -37,7 +37,7 @@ function AdminPage() {
     apiGet<AdminInfo>("/api/admin/me")
       .then((info) => setAdmin(info))
       .catch(() => {
-        localStorage.removeItem("alanrich_admin_token");
+        localStorage.removeItem("carmstrong_admin_token");
       })
       .finally(() => setChecking(false));
   }, []);
@@ -67,7 +67,7 @@ function AuthGate({ onLogin }: { onLogin: (info: AdminInfo) => void }) {
     setBusy(true);
     try {
       const { access_token } = await apiPost<{ access_token: string; token_type: string }>("/api/admin/login", { email, password });
-      localStorage.setItem("alanrich_admin_token", access_token);
+      localStorage.setItem("carmstrong_admin_token", access_token);
       const info = await apiGet<AdminInfo>("/api/admin/me");
       onLogin(info);
     } catch (error: any) {
@@ -83,7 +83,7 @@ function AuthGate({ onLogin }: { onLogin: (info: AdminInfo) => void }) {
           <span className="grid size-10 place-items-center rounded-xl bg-primary text-primary-foreground shadow-lg">
             <Leaf className="size-5" />
           </span>
-          <span className="font-display text-xl font-extrabold">Alanrich <span className="text-primary">LLC</span></span>
+          <span className="font-display text-xl font-extrabold">Carmstrong <span className="text-primary">LLC</span></span>
         </Link>
         <div className="rounded-3xl border border-primary/10 bg-card p-8 shadow-2xl">
           <h1 className="font-display text-2xl font-extrabold">Staff Portal</h1>
@@ -165,7 +165,7 @@ function Dashboard({ email }: { email: string }) {
   }
 
   function signOut() {
-    localStorage.removeItem("alanrich_admin_token");
+    localStorage.removeItem("carmstrong_admin_token");
     window.location.reload();
   }
 
@@ -294,7 +294,7 @@ function BookingCard({ b, onStatus, onDelete }: { b: Booking; onStatus: (id: num
         <Info icon={Mail} label="Email"><a href={`mailto:${b.email}`} className="hover:text-primary">{b.email}</a></Info>
         <Info icon={Phone} label="Phone"><a href={`tel:${b.phone}`} className="hover:text-primary">{b.phone}</a></Info>
         <Info icon={MapPin} label="Address">{b.address}</Info>
-        <Info icon={Calendar} label="Preferred date">{b.preferred_date ?? "—"}</Info>
+        <Info icon={Calendar} label="Preferred date">{b.preferred_date ?? "N/A"}</Info>
         {b.lawn_size && <Info icon={CheckCircle2} label="Lawn size">{b.lawn_size}</Info>}
       </dl>
       {b.notes && <p className="mt-4 rounded-lg bg-secondary/60 p-3 text-sm"><span className="font-bold">Notes:</span> {b.notes}</p>}

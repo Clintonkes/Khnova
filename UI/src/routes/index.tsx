@@ -4,14 +4,14 @@ import heroLawn from "@/assets/hero-lawn.jpg";
 import mowingAction from "@/assets/mowing-action.jpg";
 import {
   ArrowUpRight, Scissors, Sprout, Trees, Leaf, Wrench,
-  Star, Phone, MapPin, Quote,
+  Star, Mail, MapPin, Quote,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Alanrich LLC — Professional Lawn Care & Mowing in Groves, TX" },
-      { name: "description", content: "Reliable, professional lawn mowing, edging, trimming, and seasonal yard care in Groves, Port Arthur, and the Golden Triangle. Free quotes." },
+      { title: "Carmstrong LLC · Professional Lawn Care & Mowing in Center Line, MI" },
+      { name: "description", content: "Reliable, professional lawn mowing, edging, trimming, and seasonal yard care in Center Line, Warren, and the Metro Detroit area. Free quotes." },
     ],
   }),
   component: Home,
@@ -23,7 +23,7 @@ const services = [
   { n: "03", icon: Leaf, title: "Yard Cleanup", desc: "Full-property leaf removal, debris haul-off, and post-storm resets that leave your yard spotless." },
   { n: "04", icon: Trees, title: "Hedge & Shrub Care", desc: "Architectural shaping, pruning, and health-focused maintenance for hedges and ornamentals." },
   { n: "05", icon: Sprout, title: "Fertilization & Weeds", desc: "Season-tuned feeding programs and targeted pre- and post-emergent weed control." },
-  { n: "06", icon: Wrench, title: "Seasonal Care", desc: "Spring startup, summer heat management, and fall winterization built for Southeast Texas." },
+  { n: "06", icon: Wrench, title: "Seasonal Care", desc: "Spring startup, summer maintenance, and fall winterization built for Michigan's seasons." },
 ];
 
 function Home() {
@@ -51,7 +51,7 @@ function Hero() {
         <div className="lg:col-span-7">
           <div className="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
             <span className="h-px w-10 bg-primary" />
-            Est. Groves, TX · Serving the Golden Triangle
+            Est. Center Line, MI · Serving Metro Detroit
           </div>
           <h1 className="font-display text-[3.25rem] font-light leading-[0.95] tracking-tight sm:text-7xl lg:text-[6.5rem]">
             The lawn,
@@ -61,7 +61,7 @@ function Hero() {
             with intent.
           </h1>
           <p className="mt-10 max-w-lg text-lg leading-relaxed text-muted-foreground">
-            Alanrich LLC is a professional lawn care studio. We treat Southeast Texas yards like architecture — precise cuts, considered edges, and turf that reads as intentional.
+            Carmstrong LLC is a professional lawn care studio. We treat Metro Detroit yards like architecture: precise cuts, considered edges, and turf that reads as intentional.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
@@ -71,8 +71,8 @@ function Hero() {
               Request a Quote
               <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
-            <a href={BUSINESS.phoneHref} className="inline-flex items-center gap-2 text-sm font-semibold underline decoration-primary/40 decoration-1 underline-offset-8 hover:decoration-primary">
-              <Phone className="size-4" /> {BUSINESS.phone}
+            <a href={`mailto:${BUSINESS.email}`} className="inline-flex items-center gap-2 text-sm font-semibold underline decoration-primary/40 decoration-1 underline-offset-8 hover:decoration-primary">
+              <Mail className="size-4" /> {BUSINESS.email}
             </a>
           </div>
         </div>
@@ -128,7 +128,7 @@ function Services() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary">§ 01 — Services</span>
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary">§ 01. Services</span>
           </div>
           <div className="lg:col-span-7">
             <h2 className="font-display text-5xl font-light leading-[1] tracking-tight md:text-6xl">
@@ -161,12 +161,12 @@ function Services() {
 
 function WhyUs() {
   const points = [
-    "Consistent, professional crew — no revolving door.",
+    "Consistent, professional crew, no revolving door.",
     "Commercial-grade equipment maintained to precision.",
     "Detailed edging, trimming, and blow-off included on every visit.",
     "Transparent pricing with no hidden fees.",
     "Fully licensed and insured for your peace of mind.",
-    "Locally owned and operated in Groves, TX.",
+    "Locally owned and operated in Center Line, MI.",
   ];
   return (
     <section className="border-y border-border bg-secondary/30 py-24 md:py-32">
@@ -174,7 +174,7 @@ function WhyUs() {
         <div className="relative lg:col-span-5">
           <img
             src={mowingAction}
-            alt="Alanrich crew mowing with commercial equipment"
+            alt="Carmstrong crew mowing with commercial equipment"
             width={1600}
             height={1000}
             loading="lazy"
@@ -183,12 +183,12 @@ function WhyUs() {
           <div className="absolute inset-0 ring-1 ring-inset ring-accent/30" />
         </div>
         <div className="lg:col-span-7">
-          <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary">§ 02 — The Studio</span>
+          <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary">§ 02. The Studio</span>
           <h2 className="mt-6 font-display text-5xl font-light leading-[1.05] tracking-tight md:text-6xl">
             We treat your yard like <em className="italic text-accent">architecture</em>.
           </h2>
           <p className="mt-8 max-w-lg text-muted-foreground">
-            Alanrich was built on one idea: show up when we say we will, do the job right, and leave every property looking magazine-ready.
+            Carmstrong was built on one idea: show up when we say we will, do the job right, and leave every property looking magazine-ready.
           </p>
           <ul className="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2">
             {points.map((p, i) => (
@@ -216,7 +216,7 @@ function Process() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary">§ 03 — Process</span>
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary">§ 03. Process</span>
             <h2 className="mt-6 font-display text-5xl font-light leading-[1.05] tracking-tight md:text-6xl">
               Four steps. <em className="italic text-primary">No friction.</em>
             </h2>
@@ -241,9 +241,9 @@ function Process() {
 
 function Testimonials() {
   const q = [
-    { quote: "Best lawn service we've ever hired. Yard looks incredible and they never miss a week.", name: "Sarah M.", role: "Homeowner · Groves" },
-    { quote: "Professional, fast, and detail-obsessed. My property manager loves the consistency.", name: "David R.", role: "Property Owner · Port Arthur" },
-    { quote: "Alanrich transformed our overgrown yard in one visit. Highly recommend.", name: "Jessica T.", role: "Homeowner · Port Neches" },
+    { quote: "Best lawn service we've ever hired. Yard looks incredible and they never miss a week.", name: "Sarah M.", role: "Homeowner · Center Line" },
+    { quote: "Professional, fast, and detail-obsessed. My property manager loves the consistency.", name: "David R.", role: "Property Owner · Warren" },
+    { quote: "Carmstrong transformed our overgrown yard in one visit. Highly recommend.", name: "Jessica T.", role: "Homeowner · Roseville" },
   ];
   return (
     <section className="border-y border-border bg-card py-24 md:py-32">
@@ -256,7 +256,7 @@ function Testimonials() {
         <footer className="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-border pt-8">
           <div>
             <p className="font-display text-lg">Sarah M.</p>
-            <p className="text-xs uppercase tracking-widest text-muted-foreground">Homeowner · Groves, TX</p>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground">Homeowner · Center Line, MI</p>
           </div>
           <div className="flex items-center gap-1 text-accent">
             {[0,1,2,3,4].map(i => <Star key={i} className="size-4 fill-current" />)}
@@ -286,7 +286,7 @@ function CTA() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary">§ 04 — Begin</span>
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary">§ 04. Begin</span>
             <h2 className="mt-6 font-display text-6xl font-light leading-[0.95] tracking-tight md:text-8xl">
               Ready for a lawn <br />you're <em className="italic text-accent">proud of?</em>
             </h2>
@@ -302,8 +302,8 @@ function CTA() {
               Ask a Question <ArrowUpRight className="size-4" />
             </Link>
             <div className="mt-6 space-y-2 text-sm text-muted-foreground lg:text-right">
-              <p className="flex items-center gap-2 lg:justify-end"><Phone className="size-4 text-primary" /> {BUSINESS.phone}</p>
-              <p className="flex items-center gap-2 lg:justify-end"><MapPin className="size-4 text-primary" /> Groves, TX</p>
+              <p className="flex items-center gap-2 lg:justify-end"><Mail className="size-4 text-primary" /> {BUSINESS.email}</p>
+              <p className="flex items-center gap-2 lg:justify-end"><MapPin className="size-4 text-primary" /> Center Line, MI</p>
             </div>
           </div>
         </div>

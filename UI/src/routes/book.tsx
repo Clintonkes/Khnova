@@ -3,14 +3,14 @@ import { SiteNav, SiteFooter, BUSINESS } from "@/components/site-layout";
 import { useState } from "react";
 import { z } from "zod";
 import { apiPost } from "@/lib/api";
-import { ArrowRight, CheckCircle2, Phone, Mail, MapPin, Loader2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, MapPin, Loader2 } from "lucide-react";
 
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Book Lawn Care — Alanrich LLC" },
-      { name: "description", content: "Book professional lawn mowing and yard care in Groves, TX. Free quote within 24 hours." },
-      { property: "og:title", content: "Book Lawn Care — Alanrich LLC" },
+      { title: "Book Lawn Care · Carmstrong LLC" },
+      { name: "description", content: "Book professional lawn mowing and yard care in Center Line, MI. Free quote within 24 hours." },
+      { property: "og:title", content: "Book Lawn Care · Carmstrong LLC" },
       { property: "og:description", content: "Free quotes within 24 hours." },
     ],
   }),
@@ -52,7 +52,7 @@ function BookPage() {
       await apiPost("/api/bookings", payload);
     } catch {
       setStatus("error");
-      setError("We couldn't submit your request. Please call us or try again.");
+      setError("We couldn't submit your request. Please try again or email us.");
       return;
     }
     setStatus("success");
@@ -82,10 +82,6 @@ function BookPage() {
                 <h3 className="font-display text-lg font-bold">Reach us directly</h3>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li className="flex items-start gap-3">
-                    <Phone className="mt-0.5 size-5 text-primary" />
-                    <a href={BUSINESS.phoneHref} className="font-semibold hover:text-primary">{BUSINESS.phone}</a>
-                  </li>
-                  <li className="flex items-start gap-3">
                     <Mail className="mt-0.5 size-5 text-primary" />
                     <a href={`mailto:${BUSINESS.email}`} className="font-semibold hover:text-primary break-all">{BUSINESS.email}</a>
                   </li>
@@ -114,7 +110,7 @@ function BookPage() {
                   <CheckCircle2 className="mx-auto size-16 text-primary" />
                   <h2 className="mt-6 font-display text-3xl font-extrabold">Request received!</h2>
                   <p className="mt-3 text-muted-foreground">
-                    Thanks — we'll reach out within 24 hours with your quote. For faster service, call us at {BUSINESS.phone}.
+                    Thanks. We'll reach out within 24 hours with your quote.
                   </p>
                   <div className="mt-8 flex flex-wrap justify-center gap-3">
                     <button onClick={() => setStatus("idle")} className="rounded-full border border-primary/20 px-6 py-3 text-sm font-bold hover:bg-secondary">
@@ -127,7 +123,7 @@ function BookPage() {
                 <form onSubmit={onSubmit} className="rounded-3xl border border-primary/10 bg-card p-8 shadow-xl md:p-10">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Field label="Full name" name="name" required placeholder="Jane Doe" />
-                    <Field label="Phone" name="phone" type="tel" required placeholder="(469) 555-0000" />
+                    <Field label="Phone" name="phone" type="tel" required placeholder="(586) 555-0000" />
                   </div>
                   <div className="mt-5">
                     <Field label="Email" name="email" type="email" required placeholder="you@example.com" />
@@ -148,7 +144,7 @@ function BookPage() {
                         <option>Hedge & Shrub Care</option>
                         <option>Fertilization & Weed Control</option>
                         <option>Seasonal Care Program</option>
-                        <option>Not sure — recommend for me</option>
+                        <option>Not sure, recommend for me</option>
                       </select>
                     </div>
                     <Field label="Lawn size (approx.)" name="lawn_size" placeholder="e.g. 1/4 acre" />
