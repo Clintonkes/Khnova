@@ -6,8 +6,8 @@ export const Route = createFileRoute("/sitemap.xml")({
   }),
   server: {
     loader: () => {
-      const baseUrl = "https://carmstrongllc.com";
-      const routes = ["/", "/services", "/book", "/contact"];
+      const baseUrl = "https://clintonkes.github.io";
+      const routes = ["/", "/services", "/about", "/book", "/contact"];
       const urls = routes
         .map(
           (path) =>

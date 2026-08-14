@@ -1,61 +1,57 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteNav, SiteFooter } from "@/components/site-layout";
-import { Scissors, Sprout, Trees, Leaf, Wrench, ArrowRight } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SectionHeader from "@/components/SectionHeader";
+import CTASection from "@/components/CTASection";
+import { Scissors, Leaf, Droplets, Trees, Sprout, Wrench } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services · Carmstrong LLC" },
-      { name: "description", content: "Professional lawn mowing, edging, trimming, cleanup, and seasonal care in Center Line, MI." },
+      { title: "Services · Olson LLC" },
+      { name: "description", content: "Professional lawn mowing, xeriscape, irrigation, and desert landscape care in Henderson and the Las Vegas Valley." },
     ],
   }),
   component: ServicesPage,
 });
 
+const HERO = "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/9ed559465_generated_image.png";
+
 const services = [
-  { icon: Scissors, title: "Precision Mowing", desc: "Weekly or bi-weekly cuts with commercial equipment. Sharp blades, alternating patterns, uniform height." },
-  { icon: Sprout, title: "Edging & Trimming", desc: "Crisp lines along walkways, driveways, and beds. Detailed string trimming around every obstacle." },
-  { icon: Leaf, title: "Yard Cleanup", desc: "Full-property leaf removal, debris haul-off, and post-storm resets that leave your yard spotless." },
-  { icon: Trees, title: "Hedge & Shrub Care", desc: "Architectural shaping, pruning, and health-focused maintenance for hedges and ornamentals." },
-  { icon: Sprout, title: "Fertilization & Weeds", desc: "Season-tuned feeding programs and targeted pre- and post-emergent weed control." },
-  { icon: Wrench, title: "Seasonal Care", desc: "Spring startup, summer maintenance, and fall winterization built for Michigan's seasons." },
+  { icon: Scissors, title: "Lawn Mowing", desc: "Weekly or bi-weekly cuts with commercial equipment, tuned to Nevada's growing season and heat." },
+  { icon: Leaf, title: "Xeriscape & Turf", desc: "Desert-smart landscaping, sod installation, and drought-tolerant design built for the valley." },
+  { icon: Droplets, title: "Irrigation & Sprinklers", desc: "Installation, repair, and seasonal tuning for efficient, water-wise desert irrigation." },
+  { icon: Trees, title: "Yard & Landscape Care", desc: "Hedge trimming, bed management, and weed control for a healthy, polished property." },
+  { icon: Sprout, title: "Seasonal Clean-Up", desc: "Spring and fall clean-ups, debris haul-off, and resets that keep your yard looking sharp." },
+  { icon: Wrench, title: "Property Maintenance", desc: "Ongoing upkeep programs tailored to your schedule, from a single cut to full-season care." },
 ];
 
 function ServicesPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
-      <SiteNav />
+    <div className="min-h-screen bg-olson-sand font-outfit text-olson-ink">
+      <Navbar />
       <main>
-        <section className="border-b border-primary/10 bg-gradient-to-b from-secondary/40 to-transparent py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Services</span>
-            <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
-              A full studio of lawn craft.
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              Everything your property needs, from precision mowing to seasonal care, under one roof.
-            </p>
-          </div>
-        </section>
+        <SectionHeader
+          title="A full studio of desert lawn craft."
+          subtitle="Everything your property needs, from precision mowing to xeriscape design, under one roof."
+          image={HERO}
+        />
 
         <section className="py-16 md:py-24">
-          <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-[1320px] gap-8 px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
             {services.map(({ icon: Icon, title, desc }) => (
-              <article key={title} className="rounded-3xl border border-primary/10 bg-card p-8">
-                <Icon className="size-8 text-primary" />
-                <h3 className="mt-6 font-display text-2xl font-bold">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+              <article key={title} className="rounded-2xl border border-olson-ink/5 bg-olson-cream p-8">
+                <Icon className="size-8 text-olson-clay" />
+                <h3 className="mt-6 font-spectral text-2xl font-bold text-olson-cactus">{title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-olson-ink/65">{desc}</p>
               </article>
             ))}
           </div>
-          <div className="mx-auto mt-12 max-w-7xl px-6 text-center">
-            <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground">
-              Get a Free Quote <ArrowRight className="size-4" />
-            </Link>
-          </div>
         </section>
+
+        <CTASection />
       </main>
-      <SiteFooter />
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL || "";
 
 function authHeaders(): Record<string, string> {
-  const token = localStorage.getItem("carmstrong_admin_token");
+  const token = localStorage.getItem("olson_admin_token");
   return token ? { Authorization: `Bearer ${token}` } : {};
 }
 

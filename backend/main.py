@@ -25,8 +25,6 @@ origins = [
     "http://localhost:5173",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
-    "https://carmstrongllc.com",
-    "https://www.carmstrongllc.com",
     "https://clintonkes.github.io",
 ]
 render_url = os.getenv("RENDER_EXTERNAL_URL")
@@ -105,7 +103,7 @@ def create_booking(data: BookingCreate, db: Session = Depends(get_db)):
 
     send_email(
         to_email=data.email,
-        subject=f"Your Carmstrong Service Request {reference}",
+        subject=f"Your Olson LLC Service Request {reference}",
         html_body=booking_confirmation_html(
             name=data.name,
             reference=reference,
@@ -136,7 +134,7 @@ def create_contact(data: ContactCreate, db: Session = Depends(get_db)):
 
     send_email(
         to_email=data.email,
-        subject="Thank you for contacting Carmstrong",
+        subject="Thank you for contacting Olson LLC",
         html_body=contact_confirmation_html(
             name=data.name,
             subject=data.subject,
@@ -204,7 +202,7 @@ def update_booking_status(
 
     send_email(
         to_email=booking.email,
-        subject=f"Carmstrong Service Update: {booking.reference}",
+        subject=f"Olson LLC Service Update: {booking.reference}",
         html_body=booking_status_html(
             name=booking.name,
             reference=booking.reference,

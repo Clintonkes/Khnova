@@ -1,21 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteNav, SiteFooter, BUSINESS } from "@/components/site-layout";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { BUSINESS } from "@/components/site-layout";
 import { useState } from "react";
 import { z } from "zod";
 import { apiPost } from "@/lib/api";
-import { ArrowRight, CheckCircle2, Mail, MapPin, Loader2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, MapPin, Phone, Loader2 } from "lucide-react";
 
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Book Lawn Care · Carmstrong LLC" },
-      { name: "description", content: "Book professional lawn mowing and yard care in Center Line, MI. Free quote within 24 hours." },
-      { property: "og:title", content: "Book Lawn Care · Carmstrong LLC" },
-      { property: "og:description", content: "Free quotes within 24 hours." },
+      { title: "Get a Free Quote · Olson LLC" },
+      { name: "description", content: "Request a free, no-obligation lawncare quote in Henderson, NV and the Las Vegas Valley. We respond within one business day." },
+      { property: "og:title", content: "Get a Free Quote · Olson LLC" },
+      { property: "og:description", content: "Free desert lawncare quotes within one business day." },
     ],
   }),
   component: BookPage,
 });
+
+const OPTIONS = [
+  "Weekly Mowing", "Bi-Weekly Mowing", "One-Time Cut", "Xeriscape & Turf",
+  "Irrigation & Sprinklers", "Seasonal Clean-Up", "Landscape Care", "Not sure, recommend for me",
+];
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your full name").max(80),
@@ -60,43 +67,47 @@ function BookPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
-      <SiteNav />
+    <div className="min-h-screen bg-olson-sand font-outfit text-olson-ink">
+      <Navbar />
       <main>
-        <section className="border-b border-primary/10 bg-gradient-to-b from-secondary/40 to-transparent py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Book a Service</span>
-            <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
+        <section className="border-b border-olson-ink/10 bg-gradient-to-b from-olson-stone/30 to-transparent py-16 md:py-24">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
+            <span className="text-xs font-bold uppercase tracking-widest text-olson-clay font-outfit">Free Quote</span>
+            <h1 className="mt-3 font-spectral text-4xl font-bold tracking-tight text-olson-cactus md:text-6xl">
               Get a free quote in 24 hours.
             </h1>
-            <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              Fill out the form and we'll respond same day with a firm price. Weekly service typically starts within a few days.
+            <p className="mt-4 max-w-2xl text-lg text-olson-ink/65">
+              Fill out the form and we'll respond same day with a firm price for your Henderson or Las Vegas property.
             </p>
           </div>
         </section>
 
         <section className="py-16 md:py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1fr_1.4fr]">
+          <div className="mx-auto grid max-w-[1320px] gap-10 px-6 lg:grid-cols-[1fr_1.4fr] lg:px-8">
             <aside className="space-y-6">
-              <div className="rounded-3xl border border-primary/10 bg-card p-8">
-                <h3 className="font-display text-lg font-bold">Reach us directly</h3>
+              <div className="rounded-3xl border border-olson-ink/5 bg-olson-cream p-8">
+                <h3 className="font-spectral text-lg font-bold text-olson-cactus">Reach us directly</h3>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li className="flex items-start gap-3">
-                    <Mail className="mt-0.5 size-5 text-primary" />
-                    <a href={`mailto:${BUSINESS.email}`} className="font-semibold hover:text-primary break-all">{BUSINESS.email}</a>
+                    <Phone className="mt-0.5 size-5 text-olson-clay" />
+                    <a href={`tel:${BUSINESS.phone.replace(/[^\d+]/g, "")}`} className="font-semibold hover:text-olson-clay">{BUSINESS.phone}</a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <MapPin className="mt-0.5 size-5 text-primary" />
-                    <span className="text-muted-foreground">{BUSINESS.address}</span>
+                    <Mail className="mt-0.5 size-5 text-olson-clay" />
+                    <a href={`mailto:${BUSINESS.email}`} className="font-semibold hover:text-olson-clay break-all">{BUSINESS.email}</a>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <MapPin className="mt-0.5 size-5 text-olson-clay" />
+                    <span className="text-olson-ink/65">{BUSINESS.address}</span>
                   </li>
                 </ul>
               </div>
-              <div className="rounded-3xl bg-primary p-8 text-primary-foreground">
-                <h3 className="font-display text-lg font-bold">What happens next</h3>
-                <ol className="mt-6 space-y-4 text-sm text-primary-foreground/80">
-                  {["We review your details","Send you a firm quote in 24h","Confirm a recurring schedule","First service within days"].map((s, i) => (
+              <div className="rounded-3xl bg-olson-cactus p-8 text-olson-cream">
+                <h3 className="font-spectral text-lg font-bold">What happens next</h3>
+                <ol className="mt-6 space-y-4 text-sm text-olson-cream/80">
+                  {["We review your details", "Send you a firm quote in 24h", "Confirm a recurring schedule", "First service within days"].map((s, i) => (
                     <li key={s} className="flex items-start gap-3">
-                      <span className="grid size-6 shrink-0 place-items-center rounded-full bg-accent text-xs font-bold text-accent-foreground">{i+1}</span>
+                      <span className="grid size-6 shrink-0 place-items-center rounded-full bg-olson-clay text-xs font-bold text-olson-cream">{i + 1}</span>
                       <span>{s}</span>
                     </li>
                   ))}
@@ -106,45 +117,37 @@ function BookPage() {
 
             <div>
               {status === "success" ? (
-                <div className="rounded-3xl border border-primary/20 bg-card p-10 text-center shadow-xl">
-                  <CheckCircle2 className="mx-auto size-16 text-primary" />
-                  <h2 className="mt-6 font-display text-3xl font-extrabold">Request received!</h2>
-                  <p className="mt-3 text-muted-foreground">
+                <div className="rounded-3xl border border-olson-clay/20 bg-olson-cream p-10 text-center shadow-xl">
+                  <CheckCircle2 className="mx-auto size-16 text-olson-clay" />
+                  <h2 className="mt-6 font-spectral text-3xl font-bold text-olson-cactus">Request received!</h2>
+                  <p className="mt-3 text-olson-ink/65">
                     Thanks. We'll reach out within 24 hours with your quote.
                   </p>
                   <div className="mt-8 flex flex-wrap justify-center gap-3">
-                    <button onClick={() => setStatus("idle")} className="rounded-full border border-primary/20 px-6 py-3 text-sm font-bold hover:bg-secondary">
-                      Book another
+                    <button onClick={() => setStatus("idle")} className="rounded-full border border-olson-ink/15 px-6 py-3 text-sm font-bold hover:bg-olson-sand">
+                      Request another
                     </button>
-                    <Link to="/" className="rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground">Back home</Link>
+                    <Link to="/" className="rounded-full bg-olson-clay px-6 py-3 text-sm font-bold text-olson-cream">Back home</Link>
                   </div>
                 </div>
               ) : (
-                <form onSubmit={onSubmit} className="rounded-3xl border border-primary/10 bg-card p-8 shadow-xl md:p-10">
+                <form onSubmit={onSubmit} className="rounded-3xl border border-olson-ink/5 bg-olson-cream p-8 shadow-xl md:p-10">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Field label="Full name" name="name" required placeholder="Jane Doe" />
-                    <Field label="Phone" name="phone" type="tel" required placeholder="(586) 555-0000" />
+                    <Field label="Phone" name="phone" type="tel" required placeholder="(702) 555-0100" />
                   </div>
                   <div className="mt-5">
                     <Field label="Email" name="email" type="email" required placeholder="you@example.com" />
                   </div>
                   <div className="mt-5">
-                    <Field label="Service address" name="address" required placeholder="Street, City, ZIP" />
+                    <Field label="Property address" name="address" required placeholder="Street, City, NV" />
                   </div>
                   <div className="mt-5 grid gap-5 sm:grid-cols-2">
                     <div>
                       <Label>Service needed *</Label>
-                      <select name="service" required className="mt-1.5 w-full rounded-xl border border-primary/15 bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20">
-                        <option value="">Choose a service…</option>
-                        <option>Weekly Mowing</option>
-                        <option>Bi-Weekly Mowing</option>
-                        <option>One-Time Mow</option>
-                        <option>Edging & Trimming</option>
-                        <option>Yard Cleanup</option>
-                        <option>Hedge & Shrub Care</option>
-                        <option>Fertilization & Weed Control</option>
-                        <option>Seasonal Care Program</option>
-                        <option>Not sure, recommend for me</option>
+                      <select name="service" required defaultValue="" className="ol-input mt-1.5">
+                        <option value="" disabled>Choose a service…</option>
+                        {OPTIONS.map((s) => <option key={s}>{s}</option>)}
                       </select>
                     </div>
                     <Field label="Lawn size (approx.)" name="lawn_size" placeholder="e.g. 1/4 acre" />
@@ -154,17 +157,17 @@ function BookPage() {
                   </div>
                   <div className="mt-5">
                     <Label>Notes for our crew</Label>
-                    <textarea name="notes" rows={4} placeholder="Gate code, pet info, problem areas…" className="mt-1.5 w-full resize-none rounded-xl border border-primary/15 bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" />
+                    <textarea name="notes" rows={4} placeholder="Gate code, pet info, problem areas…" className="ol-input mt-1.5 resize-none" />
                   </div>
-                  {error && <p className="mt-4 rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">{error}</p>}
+                  {error && <p className="mt-4 rounded-lg bg-olson-clay/10 px-4 py-3 text-sm text-olson-clay">{error}</p>}
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
+                    className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-olson-clay px-8 py-4 text-sm font-bold text-olson-cream shadow-lg shadow-olson-ink/10 transition-all hover:-translate-y-0.5 hover:bg-olson-cactus disabled:opacity-60 disabled:hover:translate-y-0"
                   >
                     {status === "submitting" ? <><Loader2 className="size-4 animate-spin" /> Submitting…</> : <>Request my free quote <ArrowRight className="size-4" /></>}
                   </button>
-                  <p className="mt-4 text-center text-xs text-muted-foreground">
+                  <p className="mt-4 text-center text-xs text-olson-ink/50">
                     By submitting, you agree to be contacted about your quote. No spam, ever.
                   </p>
                 </form>
@@ -173,13 +176,13 @@ function BookPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
+      <Footer />
     </div>
   );
 }
 
 function Label({ children }: { children: React.ReactNode }) {
-  return <label className="block text-xs font-bold uppercase tracking-widest text-muted-foreground">{children}</label>;
+  return <label className="block text-xs font-bold uppercase tracking-widest text-olson-ink/50 font-outfit">{children}</label>;
 }
 function Field({ label, name, type = "text", placeholder, required }: { label: string; name: string; type?: string; placeholder?: string; required?: boolean }) {
   return (
@@ -191,7 +194,7 @@ function Field({ label, name, type = "text", placeholder, required }: { label: s
         type={type}
         placeholder={placeholder}
         required={required}
-        className="mt-1.5 w-full rounded-xl border border-primary/15 bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+        className="ol-input mt-1.5"
       />
     </div>
   );

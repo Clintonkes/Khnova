@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: alanrich
+    name: olson-backend
     runtime: docker
     dockerfilePath: ./Dockerfile
     envVars:

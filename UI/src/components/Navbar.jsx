@@ -1,54 +1,83 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Leaf } from "lucide-react";
-import { scrollToSection } from "@/lib/scroll";
+import { Sprout, Menu, X } from "lucide-react";
 
 const LINKS = [
-  { l: "Services", id: "cm-services" },
-  { l: "Why Us", id: "cm-why" },
-  { l: "Work", id: "cm-work" },
-  { l: "Quote", id: "cm-quote" },
+  { to: "/", label: "Home" },
+  { to: "/services", label: "Services" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const f = () => setScrolled(window.scrollY > 40);
-    f();
-    window.addEventListener("scroll", f);
-    return () => window.removeEventListener("scroll", f);
-  }, []);
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "bg-cm-forest/95 backdrop-blur-md py-3 shadow-lg" : "py-5 bg-transparent"}`}>
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-8 flex items-center justify-between">
-        <button type="button" onClick={() => scrollToSection("cm-top")} className="flex items-center gap-2 bg-transparent border-0 p-0 cursor-pointer">
-          <span className="w-9 h-9 rounded-full bg-cm-rust grid place-items-center"><Leaf className="text-cm-cream" size={18} /></span>
-          <span className={`font-bricolage text-xl font-extrabold tracking-tight ${scrolled ? "text-cm-cream" : "text-cm-forest"}`}>Carmstrong</span>
-          <span className={`font-inter text-[10px] tracking-[0.3em] uppercase border-l pl-2 ${scrolled ? "text-cm-cream/60 border-cm-cream/30" : "text-cm-forest/50 border-cm-forest/30"}`}>LLC</span>
-        </button>
-        <nav className="hidden md:flex items-center gap-8">
+    <nav className="sticky top-0 z-50 border-b border-olson-ink/10 bg-olson-cream/90 backdrop-blur-md">
+      <div className="mx-auto flex max-w-[1320px] items-center justify-between gap-3 px-6 py-4 lg:px-8">
+        <Link to="/" className="flex min-w-0 items-center gap-2.5">
+          <span className="grid size-9 shrink-0 place-items-center rounded-full bg-olson-clay">
+            <Sprout className="size-4.5 text-olson-cream" />
+          </span>
+          <span className="truncate font-spectral text-lg font-bold text-olson-cactus">
+            Olson <span className="font-outfit text-[10px] tracking-[0.3em] uppercase text-olson-ink/60">LLC</span>
+          </span>
+        </Link>
+
+        <div className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (
-            <button key={l.id} type="button" onClick={() => scrollToSection(l.id)} className={`bg-transparent border-0 p-0 cursor-pointer text-sm font-medium transition ${scrolled ? "text-cm-cream/80 hover:text-cm-rust" : "text-cm-ink/70 hover:text-cm-rust"}`}>{l.l}</button>
+            <Link
+              key={l.to}
+              to={l.to}
+              className="font-outfit text-sm font-semibold text-olson-ink/75 transition-colors hover:text-olson-clay"
+              activeProps={{ className: "text-olson-clay" }}
+              activeOptions={{ exact: l.to === "/" }}
+            >
+              {l.label}
+            </Link>
           ))}
-          <Link to="/contact" className={`text-sm font-medium transition ${scrolled ? "text-cm-cream/80 hover:text-cm-rust" : "text-cm-ink/70 hover:text-cm-rust"}`}>Contact</Link>
-          <button type="button" onClick={() => scrollToSection("cm-quote")} className="bg-cm-rust border-0 cursor-pointer px-5 py-2.5 rounded-full text-cm-cream font-semibold text-sm hover:bg-cm-forest transition">Free Quote</button>
-        </nav>
-        <button className={`md:hidden ${scrolled ? "text-cm-cream" : "text-cm-forest"}`} onClick={() => setOpen(!open)}>{open ? <X size={24} /> : <Menu size={24} />}</button>
+          <Link
+            to="/book"
+            className="rounded-full bg-olson-clay px-5 py-2.5 font-outfit text-sm font-semibold text-olson-cream shadow-lg shadow-olson-ink/10 transition hover:bg-olson-cactus"
+          >
+            Get a Free Quote
+          </Link>
+        </div>
+
+        <button
+          onClick={() => setOpen(!open)}
+          className="rounded-lg border border-olson-ink/10 p-2 text-olson-ink md:hidden"
+          aria-label="Menu"
+        >
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+        </button>
       </div>
+
       {open && (
-        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} className="md:hidden bg-cm-forest border-t border-cm-rust/20 overflow-hidden">
-          <div className="px-6 py-4 flex flex-col gap-4">
+        <div className="border-t border-olson-ink/10 bg-olson-cream md:hidden">
+          <div className="mx-auto flex max-w-[1320px] flex-col gap-1 px-6 py-4">
             {LINKS.map((l) => (
-              <button key={l.id} type="button" onClick={() => { setOpen(false); scrollToSection(l.id); }} className="bg-transparent border-0 p-0 cursor-pointer text-left text-cm-cream/85 py-2">{l.l}</button>
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-3 font-outfit text-sm font-semibold text-olson-ink/80 hover:bg-olson-sand"
+                activeProps={{ className: "text-olson-clay bg-olson-sand" }}
+                activeOptions={{ exact: l.to === "/" }}
+              >
+                {l.label}
+              </Link>
             ))}
-            <Link to="/contact" onClick={() => setOpen(false)} className="text-cm-cream/85 py-2">Contact</Link>
-            <button type="button" onClick={() => { setOpen(false); scrollToSection("cm-quote"); }} className="bg-cm-rust border-0 cursor-pointer text-center px-5 py-3 rounded-full text-cm-cream font-semibold">Free Quote</button>
+            <Link
+              to="/book"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-full bg-olson-clay px-5 py-3 text-center font-outfit text-sm font-semibold text-olson-cream"
+            >
+              Get a Free Quote
+            </Link>
           </div>
-        </motion.div>
+        </div>
       )}
-    </header>
+    </nav>
   );
 }

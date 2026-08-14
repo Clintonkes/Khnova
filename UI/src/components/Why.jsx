@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin, CalendarCheck, Handshake } from "lucide-react";
+import { MapPin, CalendarCheck, BadgeDollarSign } from "lucide-react";
 
 const easeOut = (x) => 1 - Math.pow(1 - x, 3);
 
-function Stat({ value, suffix, label }) {
+function Stat({ value, suffix, label, dark }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
   const [n, setN] = useState(0);
@@ -23,45 +23,35 @@ function Stat({ value, suffix, label }) {
   }, [inView, value]);
   return (
     <div ref={ref} className="text-center">
-      <div className="font-bricolage text-cm-rust text-4xl md:text-5xl font-extrabold">{n}{suffix}</div>
-      <div className="text-cm-cream/70 font-inter text-xs uppercase tracking-wider mt-2">{label}</div>
+      <div className="font-spectral text-olson-clay text-4xl md:text-5xl font-bold">{n}{suffix}</div>
+      <div className={`font-outfit text-xs uppercase tracking-wider mt-2 ${dark ? "text-olson-cream/70" : "text-olson-ink/60"}`}>{label}</div>
     </div>
   );
 }
 
-const PROMISES = [
-  { icon: MapPin, t: "Locally Owned", d: "Based in Center Line, MI. We know Metro Detroit lawns and the seasons that shape them." },
-  { icon: CalendarCheck, t: "Dependable Schedules", d: "Reliable weekly and bi-weekly visits. We show up when we say we will, every time." },
-  { icon: Handshake, t: "Fair Upfront Pricing", d: "Honest quotes with no surprises. Quality work at a fair price, guaranteed on every visit." },
+const VALUES = [
+  { icon: MapPin, t: "Locally Owned in Henderson", d: "We know the Vegas Valley climate and what keeps a yard green in the desert heat." },
+  { icon: CalendarCheck, t: "Reliable Schedules", d: "Dependable weekly and bi-weekly visits. We show up on time, every time." },
+  { icon: BadgeDollarSign, t: "Honest Pricing", d: "Clear, upfront quotes with no surprises. Quality desert lawncare at a fair rate." },
 ];
 
 export default function Why() {
   const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } };
   return (
-    <section id="cm-why" className="bg-cm-oat py-24">
+    <section className="bg-olson-cactus py-24">
       <div className="max-w-[1320px] mx-auto px-6 lg:px-8">
-        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} transition={{ duration: 0.6 }} className="bg-cm-forest rounded-3xl p-8 md:p-12 grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          <Stat value={10} suffix="+" label="Years Local" />
-          <Stat value={600} suffix="+" label="Lawns Serviced" />
-          <Stat value={48} suffix="" label="Hr Response" />
-          <Stat value={100} suffix="%" label="Satisfaction" />
-        </motion.div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <Stat value={12} suffix="+" label="Years Local" dark />
+          <Stat value={850} suffix="+" label="Yards Serviced" dark />
+          <Stat value={48} suffix="" label="Hr Response" dark />
+          <Stat value={100} suffix="%" label="Satisfaction" dark />
+        </div>
         <div className="grid md:grid-cols-3 gap-6">
-          {PROMISES.map((p, idx) => (
-            <motion.div
-              key={p.t}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-cm-cream border border-cm-forest/8 rounded-2xl p-7"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-cm-rust/10 grid place-items-center mb-5">
-                <p.icon className="text-cm-rust" size={26} />
-              </div>
-              <h3 className="font-bricolage text-cm-forest text-2xl font-extrabold mb-2">{p.t}</h3>
-              <p className="text-cm-ink/65 font-inter leading-relaxed">{p.d}</p>
+          {VALUES.map((v, idx) => (
+            <motion.div key={v.t} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5, delay: idx * 0.1 }} className="bg-olson-cream/5 border border-olson-cream/15 rounded-2xl p-7">
+              <div className="w-14 h-14 rounded-2xl bg-olson-clay/20 grid place-items-center mb-5"><v.icon className="text-olson-clay" size={26} /></div>
+              <h3 className="font-spectral text-olson-cream text-2xl font-bold mb-2">{v.t}</h3>
+              <p className="text-olson-cream/75 font-outfit leading-relaxed">{v.d}</p>
             </motion.div>
           ))}
         </div>
