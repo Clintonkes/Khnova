@@ -6,8 +6,6 @@ export default defineConfig({
     spa: { enabled: true, prerender: { enabled: false } },
   },
   vite: {
-    // GitHub Pages project site: served at https://clintonkes.github.io/olson/
-    base: process.env.NODE_ENV === "production" ? "/olson/" : "/",
     server: {
       proxy: {
         "/api": {
