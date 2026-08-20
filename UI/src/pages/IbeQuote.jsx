@@ -86,8 +86,8 @@ export default function IbeQuote() {
                 <Row label="Schedule" value={d.schedule} />
               </div>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
-                <Link to="/ibe-evergreen" className="px-6 py-3 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold hover:bg-ibe-ever hover:text-ibe-cream transition">Back Home</Link>
-                <Link to="/ibe-evergreen/contact" className="px-6 py-3 rounded-full border-2 border-ibe-ever/30 text-ibe-ever font-mulish font-bold hover:bg-ibe-ever hover:text-ibe-cream transition">General Question?</Link>
+                <Link to="/" className="px-6 py-3 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold hover:bg-ibe-ever hover:text-ibe-cream transition">Back Home</Link>
+                <Link to="/contact" className="px-6 py-3 rounded-full border-2 border-ibe-ever/30 text-ibe-ever font-mulish font-bold hover:bg-ibe-ever hover:text-ibe-cream transition">General Question?</Link>
               </div>
             </motion.div>
           ) : (

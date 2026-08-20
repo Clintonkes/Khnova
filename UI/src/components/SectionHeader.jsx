@@ -9,7 +9,7 @@ export default function SectionHeader({ title, subtitle, image }) {
       <div className="absolute inset-0 bg-ibe-ever/80" />
       <div className="relative max-w-[1320px] mx-auto px-6 lg:px-8 text-center">
         <nav className="flex items-center justify-center gap-2 text-ibe-cream/60 font-mulish text-sm mb-4">
-          <Link to="/ibe-evergreen" className="hover:text-ibe-spring">Home</Link>
+          <Link to="/" className="hover:text-ibe-spring">Home</Link>
           <ChevronRight size={14} />
           <span className="text-ibe-spring">{title}</span>
         </nav>

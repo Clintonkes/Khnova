@@ -19,7 +19,7 @@ import Admin from "@/pages/Admin";
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/ibe-evergreen" element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<IbeHome />} />
         <Route path="services" element={<IbeServices />} />
         <Route path="about" element={<IbeAbout />} />
@@ -30,7 +30,6 @@ function AppRoutes() {
       <Route element={<ProtectedRoute unauthenticatedElement={<Navigate to="/login?returnTo=/admin" replace />} />}>
         <Route path="/admin" element={<Admin />} />
       </Route>
-      <Route path="/" element={<Navigate to="/ibe-evergreen" replace />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

@@ -14,7 +14,7 @@ export default function CTASection() {
             <p className="text-ibe-cream/80 font-mulish mt-3 max-w-lg">Get a free, no-obligation quote for your Madison or metro-Jackson property today.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <Link to="/ibe-evergreen/quote" className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold hover:bg-ibe-cream transition"><ArrowRight size={18} /> Get a Free Quote</Link>
+            <Link to="/quote" className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold hover:bg-ibe-cream transition"><ArrowRight size={18} /> Get a Free Quote</Link>
             <a href="tel:+16013311246" className="inline-flex items-center gap-2 px-7 py-4 rounded-full border-2 border-ibe-cream/40 text-ibe-cream font-mulish font-bold hover:bg-ibe-cream hover:text-ibe-ever transition"><Phone size={18} /> (601) 331-1246</a>
           </div>
         </motion.div>

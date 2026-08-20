@@ -24,10 +24,10 @@ export default function Hero() {
             I&B Evergreen LLC brings dependable, year-round lawn care and landscaping to Madison and the greater metro-Jackson area — mowing, beds, clean-ups and full property upkeep.
           </p>
           <motion.div initial="hidden" animate="show" variants={fadeUp} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-wrap justify-center gap-4 mt-9">
-            <Link to="/ibe-evergreen/quote" className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold hover:bg-ibe-cream transition shadow-lg shadow-ibe-bark/30">
+            <Link to="/quote" className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold hover:bg-ibe-cream transition shadow-lg shadow-ibe-bark/30">
               <ArrowRight size={18} /> Get a Free Quote
             </Link>
-            <Link to="/ibe-evergreen/services" className="inline-flex items-center gap-2 px-7 py-4 rounded-full border-2 border-ibe-cream/30 text-ibe-cream font-mulish font-bold hover:bg-ibe-cream hover:text-ibe-ever transition">
+            <Link to="/services" className="inline-flex items-center gap-2 px-7 py-4 rounded-full border-2 border-ibe-cream/30 text-ibe-cream font-mulish font-bold hover:bg-ibe-cream hover:text-ibe-ever transition">
               Our Services
             </Link>
           </motion.div>

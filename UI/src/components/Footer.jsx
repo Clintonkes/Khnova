@@ -27,12 +27,12 @@ export default function Footer() {
         <div>
           <h4 className="font-lora text-ibe-cream text-lg font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2 font-mulish text-sm">
-            <li><Link to="/ibe-evergreen/services" className="hover:text-ibe-spring">Services</Link></li>
-            <li><Link to="/ibe-evergreen/about" className="hover:text-ibe-spring">About Us</Link></li>
-            <li><Link to="/ibe-evergreen/quote" className="hover:text-ibe-spring">Free Quote</Link></li>
-            <li><Link to="/ibe-evergreen" className="hover:text-ibe-spring">Home</Link></li>
+            <li><Link to="/services" className="hover:text-ibe-spring">Services</Link></li>
+            <li><Link to="/about" className="hover:text-ibe-spring">About Us</Link></li>
+            <li><Link to="/quote" className="hover:text-ibe-spring">Free Quote</Link></li>
+            <li><Link to="/" className="hover:text-ibe-spring">Home</Link></li>
           </ul>
-          <Link to="/ibe-evergreen/quote" className="inline-block mt-5 px-5 py-2.5 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold text-sm hover:bg-ibe-cream transition">Get a Quote</Link>
+          <Link to="/quote" className="inline-block mt-5 px-5 py-2.5 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold text-sm hover:bg-ibe-cream transition">Get a Quote</Link>
         </div>
       </div>
       <div className="border-t border-ibe-cream/10 mt-12 pt-6 max-w-[1320px] mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-3 font-mulish text-xs text-ibe-cream/50">

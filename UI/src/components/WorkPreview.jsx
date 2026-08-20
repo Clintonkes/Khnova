@@ -19,7 +19,7 @@ export default function WorkPreview() {
             <span className="text-ibe-spring font-mulish text-sm font-bold tracking-[0.25em] uppercase">Recent Work</span>
             <h2 className="font-lora text-ibe-ever text-4xl md:text-5xl font-bold mt-3">Yards we keep evergreen.</h2>
           </motion.div>
-          <Link to="/ibe-evergreen/quote" className="inline-flex items-center gap-2 text-ibe-spring font-mulish font-bold group shrink-0">
+          <Link to="/quote" className="inline-flex items-center gap-2 text-ibe-spring font-mulish font-bold group shrink-0">
             Get your free quote <ArrowRight size={18} className="group-hover:translate-x-1 transition" />
           </Link>
         </div>

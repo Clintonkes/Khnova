@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Base URL uses the GitHub Pages origin until a real domain is purchased for I&B Evergreen. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://clintonkes.github.io/ibe-evergreen</loc></url>
-  <url><loc>https://clintonkes.github.io/ibe-evergreen/services</loc></url>
-  <url><loc>https://clintonkes.github.io/ibe-evergreen/about</loc></url>
-  <url><loc>https://clintonkes.github.io/ibe-evergreen/contact</loc></url>
-  <url><loc>https://clintonkes.github.io/ibe-evergreen/quote</loc></url>
+  <url><loc>https://ibevergreen.com/</loc></url>
+  <url><loc>https://ibevergreen.com/services</loc></url>
+  <url><loc>https://ibevergreen.com/about</loc></url>
+  <url><loc>https://ibevergreen.com/contact</loc></url>
+  <url><loc>https://ibevergreen.com/quote</loc></url>
 </urlset>

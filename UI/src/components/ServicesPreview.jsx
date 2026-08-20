@@ -33,7 +33,7 @@ export default function ServicesPreview() {
               <div className="p-6">
                 <h3 className="font-lora text-ibe-ever text-xl font-bold mb-2">{s.t}</h3>
                 <p className="text-ibe-bark/65 font-mulish text-sm leading-relaxed">{s.d}</p>
-                <Link to="/ibe-evergreen/services" className="inline-flex items-center gap-1.5 mt-4 text-ibe-spring font-mulish text-sm font-bold group/link">
+                <Link to="/services" className="inline-flex items-center gap-1.5 mt-4 text-ibe-spring font-mulish text-sm font-bold group/link">
                   Learn more <ArrowRight size={15} className="group-hover/link:translate-x-1 transition" />
                 </Link>
               </div>

@@ -21,13 +21,13 @@ from email_service import (
 
 app = FastAPI(title="I&B Evergreen API", version="1.0.0")
 
-# https://clintonkes.github.io is the GitHub Pages origin used until a real
-# domain is purchased for I&B Evergreen.
 origins = [
     "http://localhost:5173",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
     "https://clintonkes.github.io",
+    "https://ibevergreen.com",
+    "https://www.ibevergreen.com",
 ]
 render_url = os.getenv("RENDER_EXTERNAL_URL")
 if render_url:
