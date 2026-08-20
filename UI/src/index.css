@@ -17,6 +17,14 @@
   --color-ibe-cream: #FCFBF6;
   --color-ibe-jade: #1F7A4D;
 
+  --color-knova-cyan: #0EA5B7;
+  --color-knova-midnight: #0B2A30;
+  --color-knova-navy: #123A42;
+  --color-knova-mist: #F2F9FA;
+  --color-knova-cream: #FAFAF7;
+  --color-knova-slate: #5B7278;
+  --color-knova-ink: #142326;
+
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 }

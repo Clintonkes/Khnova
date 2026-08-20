@@ -1,43 +1,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Leaf, MapPin, Mail, Phone } from "lucide-react";
+import { Sprout, Phone, MapPin, Clock } from "lucide-react";
+import { KH, SERVICES, AREAS } from "@/lib/khnova";
 
 export default function Footer() {
   return (
-    <footer className="bg-ibe-ever text-ibe-cream/70 pt-16 pb-8">
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-10">
-        <div className="md:col-span-2">
+    <footer className="bg-knova-midnight text-knova-cream/80 font-dmsans">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div>
           <div className="flex items-center gap-2.5 mb-4">
-            <span className="w-9 h-9 rounded-lg bg-ibe-spring grid place-items-center"><Leaf className="text-ibe-bark" size={18} /></span>
-            <span className="leading-tight">
-              <span className="font-lora text-ibe-cream text-lg font-bold block">I&B Evergreen</span>
-              <span className="font-mulish text-[9px] tracking-[0.3em] uppercase text-ibe-cream/60">LLC · Madison MS</span>
-            </span>
+            <span className="w-10 h-10 rounded-lg bg-knova-cyan grid place-items-center"><Sprout className="text-knova-midnight" size={22} /></span>
+            <span className="font-newsreader text-xl font-bold text-knova-cream">KH NOVA</span>
           </div>
-          <p className="font-mulish max-w-sm">Lush, healthy lawns and dependable landscaping for Madison and the greater metro-Jackson area. Family-owned, year-round care that keeps your yard evergreen.</p>
+          <p className="text-sm leading-relaxed text-knova-cream/60 max-w-xs mb-4">{KH.tagline}. Reliable, professional mowing and lawn maintenance for Centre, AL and Cherokee County.</p>
+          <a href={`tel:${KH.phoneRaw}`} className="inline-flex items-center gap-2 font-semibold text-knova-cyan"><Phone size={16} /> {KH.phone}</a>
         </div>
         <div>
-          <h4 className="font-lora text-ibe-cream text-lg font-semibold mb-4">Contact</h4>
-          <ul className="space-y-3 font-mulish text-sm">
-            <li><a href="tel:+16013311246" className="flex items-center gap-3 hover:text-ibe-spring"><Phone size={16} className="text-ibe-spring" />+1 (601) 331-1246</a></li>
-            <li><a href="mailto:ibevergreenllc@proton.me" className="flex items-center gap-3 hover:text-ibe-spring break-all"><Mail size={16} className="text-ibe-spring" />ibevergreenllc@proton.me</a></li>
-            <li className="flex items-start gap-3"><MapPin size={16} className="text-ibe-spring mt-0.5 shrink-0" /><span>132 Millhouse Dr, Madison,<br />MS 39110</span></li>
+          <h4 className="font-newsreader text-lg font-bold text-knova-cream mb-4">Services</h4>
+          <ul className="space-y-2 text-sm">
+            {SERVICES.slice(0, 6).map((s) => <li key={s.title}><Link to="/kh-nova/services" className="hover:text-knova-cyan transition">{s.title}</Link></li>)}
           </ul>
         </div>
         <div>
-          <h4 className="font-lora text-ibe-cream text-lg font-semibold mb-4">Quick Links</h4>
-          <ul className="space-y-2 font-mulish text-sm">
-            <li><Link to="/services" className="hover:text-ibe-spring">Services</Link></li>
-            <li><Link to="/about" className="hover:text-ibe-spring">About Us</Link></li>
-            <li><Link to="/quote" className="hover:text-ibe-spring">Free Quote</Link></li>
-            <li><Link to="/" className="hover:text-ibe-spring">Home</Link></li>
+          <h4 className="font-newsreader text-lg font-bold text-knova-cream mb-4">Company</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/kh-nova" className="hover:text-knova-cyan">Home</Link></li>
+            <li><Link to="/kh-nova/services" className="hover:text-knova-cyan">Services</Link></li>
+            <li><Link to="/kh-nova/about" className="hover:text-knova-cyan">About</Link></li>
+            <li><Link to="/kh-nova/contact" className="hover:text-knova-cyan">Contact</Link></li>
+            <li><Link to="/kh-nova/quote" className="hover:text-knova-cyan">Free Quote</Link></li>
+            <li><Link to="/admin" className="text-knova-cream/40 hover:text-knova-cyan">Admin</Link></li>
           </ul>
-          <Link to="/quote" className="inline-block mt-5 px-5 py-2.5 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold text-sm hover:bg-ibe-cream transition">Get a Quote</Link>
+        </div>
+        <div>
+          <h4 className="font-newsreader text-lg font-bold text-knova-cream mb-4">Get in Touch</h4>
+          <ul className="space-y-3 text-sm">
+            <li className="flex gap-2.5"><MapPin size={16} className="text-knova-cyan mt-0.5 shrink-0" /><span>{KH.address}</span></li>
+            <li className="flex gap-2.5"><Phone size={16} className="text-knova-cyan mt-0.5 shrink-0" /><a href={`tel:${KH.phoneRaw}`} className="hover:text-knova-cyan">{KH.phone}</a></li>
+            <li className="flex gap-2.5"><Clock size={16} className="text-knova-cyan mt-0.5 shrink-0" /><span>{KH.hours}</span></li>
+            <li className="flex gap-2.5"><MapPin size={16} className="text-knova-cyan mt-0.5 shrink-0" /><span className="text-knova-cream/60">Serving: {AREAS.slice(0, 4).join(", ")} & more</span></li>
+          </ul>
         </div>
       </div>
-      <div className="border-t border-ibe-cream/10 mt-12 pt-6 max-w-[1320px] mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-3 font-mulish text-xs text-ibe-cream/50">
-        <span>© {new Date().getFullYear()} I&B Evergreen LLC. All rights reserved.</span>
-        <span>Serving Madison · Ridgeland · Jackson · Brandon · Flowood · Gluckstadt</span>
+      <div className="border-t border-knova-cream/10">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 py-5 flex flex-col sm:flex-row justify-between gap-2 text-xs text-knova-cream/50">
+          <span>© {new Date().getFullYear()} KH NOVA LLC. All rights reserved.</span>
+          <span>Centre, AL · Licensed & Insured</span>
+        </div>
       </div>
     </footer>
   );

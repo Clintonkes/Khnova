@@ -1,23 +1,21 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
+import { motion } from "framer-motion";
+import { KH } from "@/lib/khnova";
 
 export default function CTASection() {
-  const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } };
   return (
-    <section className="bg-ibe-ever py-20">
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-8">
-        <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.6 }} className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left bg-ibe-cream/5 border border-ibe-cream/15 rounded-3xl p-10 md:p-12">
-          <div>
-            <h2 className="font-lora text-ibe-cream text-3xl md:text-4xl font-bold leading-tight">Ready for a healthier lawn?</h2>
-            <p className="text-ibe-cream/80 font-mulish mt-3 max-w-lg">Get a free, no-obligation quote for your Madison or metro-Jackson property today.</p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <Link to="/quote" className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold hover:bg-ibe-cream transition"><ArrowRight size={18} /> Get a Free Quote</Link>
-            <a href="tel:+16013311246" className="inline-flex items-center gap-2 px-7 py-4 rounded-full border-2 border-ibe-cream/40 text-ibe-cream font-mulish font-bold hover:bg-ibe-cream hover:text-ibe-ever transition"><Phone size={18} /> (601) 331-1246</a>
-          </div>
+    <section className="py-16 bg-knova-cyan relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <h2 className="font-newsreader text-3xl md:text-4xl font-bold text-knova-midnight">Ready for a lawn you'll love?</h2>
+          <p className="mt-2 text-knova-midnight/80 font-dmsans text-lg">Get a free, no-obligation quote — most lawns priced within 24 hours.</p>
         </motion.div>
+        <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+          <Link to="/kh-nova/quote" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-knova-midnight text-knova-cyan font-dmsans font-bold hover:bg-knova-cream hover:text-knova-midnight transition"><ArrowRight size={18} /> Get a Free Quote</Link>
+          <a href={`tel:${KH.phoneRaw}`} className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border-2 border-knova-midnight text-knova-midnight font-dmsans font-bold hover:bg-knova-midnight hover:text-knova-cyan transition"><Phone size={18} /> Call Us</a>
+        </div>
       </div>
     </section>
   );

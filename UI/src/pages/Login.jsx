@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useSearchParams, Navigate } from "react-router-dom";
-import { Loader2, Leaf } from "lucide-react";
+import { Loader2, Sprout } from "lucide-react";
 import { useAuth } from "@/lib/AuthContext";
 
 export default function Login() {
@@ -34,7 +34,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-ibe-bone px-6">
       <div className="w-full max-w-sm">
         <div className="flex flex-col items-center mb-8">
-          <span className="w-12 h-12 rounded-xl bg-ibe-ever grid place-items-center mb-4"><Leaf className="text-ibe-spring" size={22} /></span>
+          <span className="w-12 h-12 rounded-xl bg-ibe-ever grid place-items-center mb-4"><Sprout className="text-ibe-spring" size={22} /></span>
           <h1 className="font-lora text-ibe-ever text-2xl font-bold">Admin Sign In</h1>
           <p className="text-ibe-bark/60 font-mulish text-sm mt-1">I&amp;B Evergreen LLC</p>
         </div>

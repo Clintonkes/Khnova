@@ -1,56 +1,44 @@
-import React, { useState, useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Menu, X, Leaf } from "lucide-react";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { Sprout, Menu, X, Phone } from "lucide-react";
+import { KH } from "@/lib/khnova";
 
-const LINKS = [
-  { l: "Home", to: "/" },
-  { l: "Services", to: "/services" },
-  { l: "About", to: "/about" },
-  { l: "Contact", to: "/contact" },
+const links = [
+  { to: "/kh-nova", label: "Home", end: true },
+  { to: "/kh-nova/services", label: "Services" },
+  { to: "/kh-nova/about", label: "About" },
+  { to: "/kh-nova/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const loc = useLocation();
-  useEffect(() => {
-    const f = () => setScrolled(window.scrollY > 40);
-    f();
-    window.addEventListener("scroll", f);
-    return () => window.removeEventListener("scroll", f);
-  }, [loc.pathname]);
-  useEffect(() => { setOpen(false); }, [loc.pathname]);
-
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "bg-ibe-bone/95 backdrop-blur-md py-3 shadow-lg shadow-ibe-bark/5" : "py-5 bg-transparent"}`}>
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-8 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5">
-          <span className="w-9 h-9 rounded-lg bg-ibe-ever grid place-items-center"><Leaf className="text-ibe-spring" size={19} /></span>
-          <span className="leading-tight">
-            <span className={`font-lora text-lg font-bold tracking-tight block ${scrolled ? "text-ibe-ever" : "text-ibe-cream"}`}>I&B Evergreen</span>
-            <span className={`font-mulish text-[9px] tracking-[0.3em] uppercase ${scrolled ? "text-ibe-bark/50" : "text-ibe-cream/60"}`}>LLC · Madison MS</span>
-          </span>
-        </Link>
-        <nav className="hidden md:flex items-center gap-8">
-          {LINKS.map((l) => (
-            <NavLink key={l.to} to={l.to} end={l.to === "/"} className={({ isActive }) => `text-sm font-medium transition ${isActive ? "text-ibe-spring" : scrolled ? "text-ibe-bark/70 hover:text-ibe-ever" : "text-ibe-cream/85 hover:text-ibe-spring"}`}>
-              {l.l}
-            </NavLink>
-          ))}
-          <Link to="/quote" className="px-5 py-2.5 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold text-sm hover:bg-ibe-ever hover:text-ibe-cream transition">Free Quote</Link>
-        </nav>
-        <button className={`md:hidden ${scrolled ? "text-ibe-bark" : "text-ibe-cream"}`} onClick={() => setOpen(!open)}>{open ? <X size={24} /> : <Menu size={24} />}</button>
+    <header className="sticky top-0 z-50 bg-knova-mist/95 backdrop-blur border-b border-knova-ink/10">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8">
+        <div className="flex items-center justify-between h-[72px]">
+          <Link to="/kh-nova" className="flex items-center gap-2.5">
+            <span className="w-10 h-10 rounded-lg bg-knova-cyan grid place-items-center"><Sprout className="text-knova-midnight" size={22} /></span>
+            <span className="leading-none">
+              <span className="block font-newsreader text-xl font-bold text-knova-midnight tracking-tight">KH NOVA</span>
+              <span className="block font-dmsans text-[10px] uppercase tracking-[0.2em] text-knova-slate">Lawn Care LLC</span>
+            </span>
+          </Link>
+          <nav className="hidden md:flex items-center gap-1">
+            {links.map((l) => <NavLink key={l.to} to={l.to} end={l.end} className={({ isActive }) => `px-4 py-2 font-dmsans text-sm font-medium rounded-full transition ${isActive ? "text-knova-midnight bg-knova-cyan/15" : "text-knova-ink hover:text-knova-midnight"}`}>{l.label}</NavLink>)}
+          </nav>
+          <div className="hidden md:flex items-center gap-3">
+            <a href={`tel:${KH.phoneRaw}`} className="font-dmsans text-sm font-semibold text-knova-midnight flex items-center gap-1.5"><Phone size={15} /> {KH.phone}</a>
+            <Link to="/kh-nova/quote" className="px-5 py-2.5 rounded-full bg-knova-cyan text-knova-midnight font-dmsans text-sm font-bold hover:bg-knova-midnight hover:text-knova-cyan transition">Free Quote</Link>
+          </div>
+          <button className="md:hidden p-2 text-knova-midnight" onClick={() => setOpen((o) => !o)} aria-label="Menu">{open ? <X size={24} /> : <Menu size={24} />}</button>
+        </div>
       </div>
       {open && (
-        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} className="md:hidden bg-ibe-ever border-t border-ibe-spring/30 overflow-hidden">
-          <div className="px-6 py-4 flex flex-col gap-4">
-            {LINKS.map((l) => (
-              <NavLink key={l.to} to={l.to} end={l.to === "/"} className={({ isActive }) => `py-2 ${isActive ? "text-ibe-spring" : "text-ibe-cream/85"}`}>{l.l}</NavLink>
-            ))}
-            <Link to="/quote" className="text-center px-5 py-3 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold">Free Quote</Link>
-          </div>
-        </motion.div>
+        <div className="md:hidden bg-knova-mist border-t border-knova-ink/10 px-5 py-4 space-y-1">
+          {links.map((l) => <NavLink key={l.to} to={l.to} end={l.end} onClick={() => setOpen(false)} className={({ isActive }) => `block px-4 py-3 rounded-lg font-dmsans font-medium ${isActive ? "bg-knova-cyan/15 text-knova-midnight" : "text-knova-ink"}`}>{l.label}</NavLink>)}
+          <a href={`tel:${KH.phoneRaw}`} className="block px-4 py-3 font-dmsans font-semibold text-knova-midnight">Call {KH.phone}</a>
+          <Link to="/kh-nova/quote" onClick={() => setOpen(false)} className="block text-center px-4 py-3 rounded-full bg-knova-cyan text-knova-midnight font-dmsans font-bold">Get a Free Quote</Link>
+        </div>
       )}
     </header>
   );

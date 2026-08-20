@@ -7,11 +7,11 @@ import { AuthProvider } from "@/lib/AuthContext";
 import ScrollToTop from "./components/ScrollToTop";
 
 import Layout from "@/components/Layout";
-import IbeHome from "@/pages/IbeHome";
-import IbeServices from "@/pages/IbeServices";
-import IbeAbout from "@/pages/IbeAbout";
-import IbeContact from "@/pages/IbeContact";
-import IbeQuote from "@/pages/IbeQuote";
+import IbeHome from "@/pages/KhnHome";
+import IbeServices from "@/pages/KhnServices";
+import IbeAbout from "@/pages/KhnAbout";
+import IbeContact from "@/pages/KhnContact";
+import IbeQuote from "@/pages/KhnQuote";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import Login from "@/pages/Login";
 import Admin from "@/pages/Admin";

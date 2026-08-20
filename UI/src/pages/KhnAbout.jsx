@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin, CalendarCheck, BadgeDollarSign, Leaf } from "lucide-react";
+import { MapPin, CalendarCheck, BadgeDollarSign, Sprout } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import CTASection from "@/components/CTASection";
 
@@ -59,7 +59,7 @@ export default function IbeAbout() {
           </motion.div>
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg shadow-ibe-bark/10">
             <img src="https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/1c9beb1d1_generated_image.png" alt="I&B Evergreen crew at work" className="w-full h-full object-cover" />
-            <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-ibe-ever grid place-items-center"><Leaf className="text-ibe-spring" size={22} /></div>
+            <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-ibe-ever grid place-items-center"><Sprout className="text-ibe-spring" size={22} /></div>
           </motion.div>
         </div>
       </section>
