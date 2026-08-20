@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: olson-backend
+    name: ib-evergreen-backend
     runtime: docker
     dockerfilePath: ./Dockerfile
     envVars:
