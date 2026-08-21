@@ -23,8 +23,8 @@ export default function Hero() {
           <h1 className="font-newsreader text-5xl md:text-6xl lg:text-7xl font-bold text-knova-cream leading-[1.05]">Mowing & Lawn Care, <span className="text-knova-cyan">Done Right.</span></h1>
           <p className="mt-6 text-lg md:text-xl text-knova-cream/80 max-w-xl">KH NOVA LLC delivers reliable, professional mowing and lawn maintenance across Centre, AL and Cherokee County — crisp cuts, healthy turf, and a yard you'll be proud of.</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <Link to="/kh-nova/quote" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-knova-cyan text-knova-midnight font-dmsans font-bold hover:bg-knova-cream transition group">Get a Free Quote <ArrowRight size={18} className="group-hover:translate-x-1 transition" /></Link>
-            <Link to="/kh-nova/services" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-knova-cream/30 text-knova-cream font-dmsans font-bold hover:bg-knova-cream/10 transition">Our Services</Link>
+            <Link to="/quote" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-knova-cyan text-knova-midnight font-dmsans font-bold hover:bg-knova-cream transition group">Get a Free Quote <ArrowRight size={18} className="group-hover:translate-x-1 transition" /></Link>
+            <Link to="/services" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-knova-cream/30 text-knova-cream font-dmsans font-bold hover:bg-knova-cream/10 transition">Our Services</Link>
           </div>
         </motion.div>
       </div>

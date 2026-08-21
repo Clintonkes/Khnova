@@ -19,17 +19,17 @@ export default function Footer() {
         <div>
           <h4 className="font-newsreader text-lg font-bold text-knova-cream mb-4">Services</h4>
           <ul className="space-y-2 text-sm">
-            {SERVICES.slice(0, 6).map((s) => <li key={s.title}><Link to="/kh-nova/services" className="hover:text-knova-cyan transition">{s.title}</Link></li>)}
+            {SERVICES.slice(0, 6).map((s) => <li key={s.title}><Link to="/services" className="hover:text-knova-cyan transition">{s.title}</Link></li>)}
           </ul>
         </div>
         <div>
           <h4 className="font-newsreader text-lg font-bold text-knova-cream mb-4">Company</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/kh-nova" className="hover:text-knova-cyan">Home</Link></li>
-            <li><Link to="/kh-nova/services" className="hover:text-knova-cyan">Services</Link></li>
-            <li><Link to="/kh-nova/about" className="hover:text-knova-cyan">About</Link></li>
-            <li><Link to="/kh-nova/contact" className="hover:text-knova-cyan">Contact</Link></li>
-            <li><Link to="/kh-nova/quote" className="hover:text-knova-cyan">Free Quote</Link></li>
+            <li><Link to="/" className="hover:text-knova-cyan">Home</Link></li>
+            <li><Link to="/services" className="hover:text-knova-cyan">Services</Link></li>
+            <li><Link to="/about" className="hover:text-knova-cyan">About</Link></li>
+            <li><Link to="/contact" className="hover:text-knova-cyan">Contact</Link></li>
+            <li><Link to="/quote" className="hover:text-knova-cyan">Free Quote</Link></li>
             <li><Link to="/admin" className="text-knova-cream/40 hover:text-knova-cyan">Admin</Link></li>
           </ul>
         </div>

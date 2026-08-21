@@ -26,7 +26,7 @@ export default function ServicesPreview() {
             );
           })}
         </div>
-        <div className="text-center mt-10"><Link to="/kh-nova/services" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-knova-midnight text-knova-cream font-dmsans font-bold hover:bg-knova-cyan hover:text-knova-midnight transition">View All Services <ArrowRight size={18} /></Link></div>
+        <div className="text-center mt-10"><Link to="/services" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-knova-midnight text-knova-cream font-dmsans font-bold hover:bg-knova-cyan hover:text-knova-midnight transition">View All Services <ArrowRight size={18} /></Link></div>
       </div>
     </section>
   );

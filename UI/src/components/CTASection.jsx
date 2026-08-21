@@ -13,7 +13,7 @@ export default function CTASection() {
           <p className="mt-2 text-knova-midnight/80 font-dmsans text-lg">Get a free, no-obligation quote — most lawns priced within 24 hours.</p>
         </motion.div>
         <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-          <Link to="/kh-nova/quote" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-knova-midnight text-knova-cyan font-dmsans font-bold hover:bg-knova-cream hover:text-knova-midnight transition"><ArrowRight size={18} /> Get a Free Quote</Link>
+          <Link to="/quote" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-knova-midnight text-knova-cyan font-dmsans font-bold hover:bg-knova-cream hover:text-knova-midnight transition"><ArrowRight size={18} /> Get a Free Quote</Link>
           <a href={`tel:${KH.phoneRaw}`} className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border-2 border-knova-midnight text-knova-midnight font-dmsans font-bold hover:bg-knova-midnight hover:text-knova-cyan transition"><Phone size={18} /> Call Us</a>
         </div>
       </div>
