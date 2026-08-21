@@ -59,17 +59,17 @@ export default function Admin() {
   if (loading) {
     return (
       <div className="min-h-screen grid place-items-center bg-ibe-bone">
-        <Loader2 className="animate-spin text-ibe-ever" size={32} />
+        <Loader2 className="animate-spin text-knova-midnight" size={32} />
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-ibe-bone font-mulish">
-      <header className="bg-ibe-ever text-ibe-cream">
+      <header className="bg-knova-midnight text-ibe-cream">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <span className="w-9 h-9 rounded-lg bg-ibe-spring grid place-items-center"><NovaMark className="text-ibe-bark" size={18} /></span>
+            <span className="w-9 h-9 rounded-lg bg-knova-cyan grid place-items-center"><NovaMark className="text-ibe-bark" size={18} /></span>
             <div className="leading-tight">
               <div className="font-lora text-lg font-bold">I&amp;B Evergreen Admin</div>
               <div className="text-xs text-ibe-cream/60">{admin?.email}</div>
@@ -96,7 +96,7 @@ export default function Admin() {
         )}
 
         <section className="mb-12">
-          <h2 className="font-lora text-ibe-ever text-2xl font-bold mb-4">Bookings</h2>
+          <h2 className="font-lora text-knova-midnight text-2xl font-bold mb-4">Bookings</h2>
           <div className="bg-ibe-cream rounded-2xl border border-ibe-bark/5 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -116,7 +116,7 @@ export default function Admin() {
                 )}
                 {bookings.map((b) => (
                   <tr key={b.id} className="border-b border-ibe-bark/5 last:border-0">
-                    <td className="p-4 font-bold text-ibe-ever">{b.reference}</td>
+                    <td className="p-4 font-bold text-knova-midnight">{b.reference}</td>
                     <td className="p-4">{b.name}</td>
                     <td className="p-4">
                       <div>{b.email}</div>
@@ -140,7 +140,7 @@ export default function Admin() {
         </section>
 
         <section>
-          <h2 className="font-lora text-ibe-ever text-2xl font-bold mb-4">Contacts</h2>
+          <h2 className="font-lora text-knova-midnight text-2xl font-bold mb-4">Contacts</h2>
           <div className="bg-ibe-cream rounded-2xl border border-ibe-bark/5 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -188,7 +188,7 @@ export default function Admin() {
 function StatTile({ label, value }) {
   return (
     <div className="bg-ibe-cream rounded-xl border border-ibe-bark/5 p-4 text-center">
-      <div className="font-lora text-ibe-ever text-2xl font-bold">{value}</div>
+      <div className="font-lora text-knova-midnight text-2xl font-bold">{value}</div>
       <div className="text-ibe-bark/50 text-xs uppercase tracking-wider mt-1">{label}</div>
     </div>
   );

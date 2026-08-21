@@ -35,21 +35,21 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-ibe-bone px-6">
       <div className="w-full max-w-sm">
         <div className="flex flex-col items-center mb-8">
-          <span className="w-12 h-12 rounded-xl bg-ibe-ever grid place-items-center mb-4"><NovaMark className="text-ibe-spring" size={22} /></span>
-          <h1 className="font-lora text-ibe-ever text-2xl font-bold">Admin Sign In</h1>
+          <span className="w-12 h-12 rounded-xl bg-knova-midnight grid place-items-center mb-4"><NovaMark className="text-knova-cyan" size={22} /></span>
+          <h1 className="font-lora text-knova-midnight text-2xl font-bold">Admin Sign In</h1>
           <p className="text-ibe-bark/60 font-mulish text-sm mt-1">I&amp;B Evergreen LLC</p>
         </div>
         <form onSubmit={onSubmit} className="bg-ibe-cream rounded-2xl p-7 border border-ibe-bark/5 shadow-lg shadow-ibe-bark/5 space-y-5">
           <label className="block">
-            <span className="block text-ibe-ever/60 text-xs font-mulish font-bold uppercase tracking-[0.15em] mb-2">Email</span>
+            <span className="block text-knova-midnight/60 text-xs font-mulish font-bold uppercase tracking-[0.15em] mb-2">Email</span>
             <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="ib-input" placeholder="admin@ibevergreenllc.com" />
           </label>
           <label className="block">
-            <span className="block text-ibe-ever/60 text-xs font-mulish font-bold uppercase tracking-[0.15em] mb-2">Password</span>
+            <span className="block text-knova-midnight/60 text-xs font-mulish font-bold uppercase tracking-[0.15em] mb-2">Password</span>
             <input required type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="ib-input" placeholder="••••••••" />
           </label>
           {error && <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>}
-          <button type="submit" disabled={submitting} className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-ibe-spring text-ibe-bark font-mulish font-bold hover:bg-ibe-ever hover:text-ibe-cream transition disabled:opacity-60">
+          <button type="submit" disabled={submitting} className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-knova-cyan text-ibe-bark font-mulish font-bold hover:bg-knova-midnight hover:text-ibe-cream transition disabled:opacity-60">
             {submitting ? <><Loader2 size={18} className="animate-spin" /> Signing in…</> : "Sign In"}
           </button>
         </form>

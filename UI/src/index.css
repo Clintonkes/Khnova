@@ -9,13 +9,9 @@
   --font-lora: 'Lora', ui-serif, Georgia, serif;
   --font-mulish: 'Mulish', ui-sans-serif, system-ui, sans-serif;
 
-  --color-ibe-ever: #14532D;
-  --color-ibe-spring: #5FA84A;
   --color-ibe-bone: #F7F5EC;
   --color-ibe-bark: #2E241A;
-  --color-ibe-moss: #7C8B4F;
   --color-ibe-cream: #FCFBF6;
-  --color-ibe-jade: #1F7A4D;
 
   --color-knova-cyan: #0EA5B7;
   --color-knova-midnight: #0B2A30;
@@ -182,7 +178,7 @@
     transition: border-color 0.2s, box-shadow 0.2s;
   }
   .ib-input::placeholder { color: rgba(46,36,26,0.4); }
-  .ib-input:focus { border-color: #5FA84A; box-shadow: 0 0 0 4px rgba(95,168,74,0.12); }
+  .ib-input:focus { border-color: #0EA5B7; box-shadow: 0 0 0 4px rgba(14,165,183,0.12); }
   .ib-input option { background-color: #fff; color: #2E241A; }
 
   @keyframes ib-zoom { from { transform: scale(1); } to { transform: scale(1.1); } }

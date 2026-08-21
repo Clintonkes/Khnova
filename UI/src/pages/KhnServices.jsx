@@ -26,17 +26,17 @@ export default function IbeServices() {
             <motion.div key={s.t} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeUp} transition={{ duration: 0.6 }} className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center bg-ibe-cream rounded-2xl p-6 lg:p-8 border border-ibe-bark/5">
               <div className={`relative rounded-xl overflow-hidden aspect-[4/3] shadow-lg shadow-ibe-bark/10 ${idx % 2 === 1 ? "lg:order-2" : ""}`}>
                 <img src={s.img} alt={s.t} className="w-full h-full object-cover" />
-                <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-ibe-ever grid place-items-center"><s.icon className="text-ibe-spring" size={22} /></div>
+                <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-knova-midnight grid place-items-center"><s.icon className="text-knova-cyan" size={22} /></div>
               </div>
               <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="font-lora text-ibe-spring/30 text-5xl font-bold leading-none">{s.n}</span>
-                  <h3 className="font-lora text-ibe-ever text-3xl font-bold">{s.t}</h3>
+                  <span className="font-lora text-knova-cyan/30 text-5xl font-bold leading-none">{s.n}</span>
+                  <h3 className="font-lora text-knova-midnight text-3xl font-bold">{s.t}</h3>
                 </div>
                 <p className="text-ibe-bark/65 font-mulish text-lg leading-relaxed mb-5">{s.d}</p>
                 <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
                   {s.points.map((p) => (
-                    <div key={p} className="flex items-center gap-2 text-ibe-bark/75 font-mulish"><span className="w-5 h-5 rounded-full bg-ibe-ever/15 grid place-items-center shrink-0"><Check className="text-ibe-ever" size={13} /></span>{p}</div>
+                    <div key={p} className="flex items-center gap-2 text-ibe-bark/75 font-mulish"><span className="w-5 h-5 rounded-full bg-knova-midnight/15 grid place-items-center shrink-0"><Check className="text-knova-midnight" size={13} /></span>{p}</div>
                   ))}
                 </div>
               </div>

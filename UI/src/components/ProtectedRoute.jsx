@@ -9,7 +9,7 @@ export default function ProtectedRoute({ unauthenticatedElement }) {
   if (isLoadingAuth) {
     return (
       <div className="min-h-screen grid place-items-center bg-ibe-bone">
-        <Loader2 className="animate-spin text-ibe-ever" size={32} />
+        <Loader2 className="animate-spin text-knova-midnight" size={32} />
       </div>
     );
   }
