@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Sprout, Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { KH } from "@/lib/khnova";
+import NovaMark from "@/components/NovaMark";
 
 const links = [
   { to: "/kh-nova", label: "Home", end: true },
@@ -17,7 +18,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
         <div className="flex items-center justify-between h-[72px]">
           <Link to="/kh-nova" className="flex items-center gap-2.5">
-            <span className="w-10 h-10 rounded-lg bg-knova-cyan grid place-items-center"><Sprout className="text-knova-midnight" size={22} /></span>
+            <span className="w-10 h-10 rounded-lg bg-knova-cyan grid place-items-center"><NovaMark className="text-knova-midnight" size={22} /></span>
             <span className="leading-none">
               <span className="block font-newsreader text-xl font-bold text-knova-midnight tracking-tight">KH NOVA</span>
               <span className="block font-dmsans text-[10px] uppercase tracking-[0.2em] text-knova-slate">Lawn Care LLC</span>

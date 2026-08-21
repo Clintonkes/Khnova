@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Sprout, LogOut, Loader2, Trash2 } from "lucide-react";
+import { LogOut, Loader2, Trash2 } from "lucide-react";
 import { useAuth } from "@/lib/AuthContext";
+import NovaMark from "@/components/NovaMark";
 import { apiGet, apiPatch, apiDelete } from "@/lib/api";
 
 const BOOKING_STATUSES = ["pending", "confirmed", "approved", "cancelled", "completed"];
@@ -68,7 +69,7 @@ export default function Admin() {
       <header className="bg-ibe-ever text-ibe-cream">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <span className="w-9 h-9 rounded-lg bg-ibe-spring grid place-items-center"><Sprout className="text-ibe-bark" size={18} /></span>
+            <span className="w-9 h-9 rounded-lg bg-ibe-spring grid place-items-center"><NovaMark className="text-ibe-bark" size={18} /></span>
             <div className="leading-tight">
               <div className="font-lora text-lg font-bold">I&amp;B Evergreen Admin</div>
               <div className="text-xs text-ibe-cream/60">{admin?.email}</div>

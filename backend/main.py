@@ -26,6 +26,8 @@ origins = [
     "http://localhost:3000",
     "http://127.0.0.1:5173",
     "https://clintonkes.github.io",
+    "https://khnovalawn.com",
+    "https://www.khnovalawn.com",
     "https://ibevergreen.com",
     "https://www.ibevergreen.com",
 ]

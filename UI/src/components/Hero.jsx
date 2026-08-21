@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Sprout } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { IMAGES } from "@/lib/khnova";
+import NovaMark from "@/components/NovaMark";
 
 const stats = [["8+", "Years"], ["200+", "Lawns Served"], ["5★", "Rated"], ["100%", "Local"]];
 
@@ -17,7 +18,7 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-5 lg:px-8 w-full">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-2xl pb-28">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-knova-cyan/15 border border-knova-cyan/30 text-knova-cyan text-xs font-dmsans font-semibold uppercase tracking-wider mb-6">
-            <Sprout size={14} /> Centre, Alabama's Premier Lawn Care
+            <NovaMark size={14} /> Centre, Alabama's Premier Lawn Care
           </div>
           <h1 className="font-newsreader text-5xl md:text-6xl lg:text-7xl font-bold text-knova-cream leading-[1.05]">Mowing & Lawn Care, <span className="text-knova-cyan">Done Right.</span></h1>
           <p className="mt-6 text-lg md:text-xl text-knova-cream/80 max-w-xl">KH NOVA LLC delivers reliable, professional mowing and lawn maintenance across Centre, AL and Cherokee County — crisp cuts, healthy turf, and a yard you'll be proud of.</p>

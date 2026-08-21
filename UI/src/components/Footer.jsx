@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Sprout, Phone, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
 import { KH, SERVICES, AREAS } from "@/lib/khnova";
+import NovaMark from "@/components/NovaMark";
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 lg:px-8 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2.5 mb-4">
-            <span className="w-10 h-10 rounded-lg bg-knova-cyan grid place-items-center"><Sprout className="text-knova-midnight" size={22} /></span>
+            <span className="w-10 h-10 rounded-lg bg-knova-cyan grid place-items-center"><NovaMark className="text-knova-midnight" size={22} /></span>
             <span className="font-newsreader text-xl font-bold text-knova-cream">KH NOVA</span>
           </div>
           <p className="text-sm leading-relaxed text-knova-cream/60 max-w-xs mb-4">{KH.tagline}. Reliable, professional mowing and lawn maintenance for Centre, AL and Cherokee County.</p>
