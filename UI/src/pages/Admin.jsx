@@ -71,7 +71,7 @@ export default function Admin() {
           <div className="flex items-center gap-2.5">
             <span className="w-9 h-9 rounded-lg bg-knova-cyan grid place-items-center"><NovaMark className="text-ibe-bark" size={18} /></span>
             <div className="leading-tight">
-              <div className="font-lora text-lg font-bold">I&amp;B Evergreen Admin</div>
+              <div className="font-lora text-lg font-bold">KH NOVA Admin</div>
               <div className="text-xs text-ibe-cream/60">{admin?.email}</div>
             </div>
           </div>

@@ -19,7 +19,7 @@ from email_service import (
     contact_confirmation_html, contact_admin_notification_html,
 )
 
-app = FastAPI(title="I&B Evergreen API", version="1.0.0")
+app = FastAPI(title="KH NOVA API", version="1.0.0")
 
 origins = [
     "http://localhost:5173",
@@ -28,8 +28,6 @@ origins = [
     "https://clintonkes.github.io",
     "https://khnovalawn.com",
     "https://www.khnovalawn.com",
-    "https://ibevergreen.com",
-    "https://www.ibevergreen.com",
 ]
 render_url = os.getenv("RENDER_EXTERNAL_URL")
 if render_url:
@@ -59,7 +57,7 @@ def _seed_admin():
         # guessable default.
         return
 
-    admin_email = os.getenv("ADMIN_EMAIL", "admin@ibevergreenllc.com")
+    admin_email = os.getenv("ADMIN_EMAIL", "admin@khnovalawn.com")
     db = SessionLocal()
     try:
         existing = db.query(Admin).first()
@@ -79,7 +77,7 @@ def _seed_admin():
 def _generate_reference():
     ts = str(int(time.time()))[-6:]
     rand = "".join(random.choices(string.digits, k=3))
-    return f"IBE-{ts}{rand}"
+    return f"KHN-{ts}{rand}"
 
 
 # ── Public Endpoints ──────────────────────────────────────────────
@@ -107,7 +105,7 @@ def create_booking(data: BookingCreate, db: Session = Depends(get_db)):
 
     send_email(
         to_email=data.email,
-        subject=f"Your I&B Evergreen LLC Service Request {reference}",
+        subject=f"Your KH NOVA LLC Service Request {reference}",
         html_body=booking_confirmation_html(
             name=data.name,
             reference=reference,
@@ -138,7 +136,7 @@ def create_contact(data: ContactCreate, db: Session = Depends(get_db)):
 
     send_email(
         to_email=data.email,
-        subject="Thank you for contacting I&B Evergreen LLC",
+        subject="Thank you for contacting KH NOVA LLC",
         html_body=contact_confirmation_html(
             name=data.name,
             subject=data.subject,
@@ -146,7 +144,7 @@ def create_contact(data: ContactCreate, db: Session = Depends(get_db)):
         ),
     )
 
-    admin_email = os.getenv("ADMIN_EMAIL", "admin@ibevergreenllc.com")
+    admin_email = os.getenv("ADMIN_EMAIL", "admin@khnovalawn.com")
     send_email(
         to_email=admin_email,
         subject=f"New Contact: {data.subject or 'No subject'}",
@@ -206,7 +204,7 @@ def update_booking_status(
 
     send_email(
         to_email=booking.email,
-        subject=f"I&B Evergreen LLC Service Update: {booking.reference}",
+        subject=f"KH NOVA LLC Service Update: {booking.reference}",
         html_body=booking_status_html(
             name=booking.name,
             reference=booking.reference,

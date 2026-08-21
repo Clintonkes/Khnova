@@ -3,14 +3,15 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send, Loader2, CheckCircle2 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import { apiPost } from "@/lib/api";
+import { KH, AREAS } from "@/lib/khnova";
 
 const HERO = "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/765b29e15_generated_image.png";
 
 const INFO = [
-  { icon: Phone, label: "Phone", value: "+1 (601) 331-1246", href: "tel:+16013311246" },
-  { icon: Mail, label: "Email", value: "ibevergreenllc@proton.me", href: "mailto:ibevergreenllc@proton.me" },
-  { icon: MapPin, label: "Address", value: "132 Millhouse Dr, Madison, MS 39110", href: null },
-  { icon: Clock, label: "Hours", value: "Mon–Sat · 7:00 AM – 6:00 PM", href: null },
+  { icon: Phone, label: "Phone", value: KH.phone, href: `tel:${KH.phoneRaw}` },
+  { icon: Mail, label: "Email", value: KH.email, href: `mailto:${KH.email}` },
+  { icon: MapPin, label: "Address", value: KH.address, href: null },
+  { icon: Clock, label: "Hours", value: KH.hours, href: null },
 ];
 
 export default function IbeContact() {
@@ -92,7 +93,7 @@ export default function IbeContact() {
             </div>
             <div className="bg-knova-midnight rounded-2xl p-6 mt-4 text-ibe-cream/85 font-mulish text-sm">
               <div className="font-lora text-ibe-cream text-lg font-bold mb-2">Service Areas</div>
-              Serving Madison, Ridgeland, Jackson, Brandon, Flowood, Gluckstadt and the surrounding metro-Jackson area.
+              Serving {AREAS.join(", ")} and the surrounding Cherokee County area.
             </div>
           </motion.div>
         </div>

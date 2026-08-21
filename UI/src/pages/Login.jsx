@@ -37,12 +37,12 @@ export default function Login() {
         <div className="flex flex-col items-center mb-8">
           <span className="w-12 h-12 rounded-xl bg-knova-midnight grid place-items-center mb-4"><NovaMark className="text-knova-cyan" size={22} /></span>
           <h1 className="font-lora text-knova-midnight text-2xl font-bold">Admin Sign In</h1>
-          <p className="text-ibe-bark/60 font-mulish text-sm mt-1">I&amp;B Evergreen LLC</p>
+          <p className="text-ibe-bark/60 font-mulish text-sm mt-1">KH NOVA LLC</p>
         </div>
         <form onSubmit={onSubmit} className="bg-ibe-cream rounded-2xl p-7 border border-ibe-bark/5 shadow-lg shadow-ibe-bark/5 space-y-5">
           <label className="block">
             <span className="block text-knova-midnight/60 text-xs font-mulish font-bold uppercase tracking-[0.15em] mb-2">Email</span>
-            <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="ib-input" placeholder="admin@ibevergreenllc.com" />
+            <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="ib-input" placeholder="admin@khnovalawn.com" />
           </label>
           <label className="block">
             <span className="block text-knova-midnight/60 text-xs font-mulish font-bold uppercase tracking-[0.15em] mb-2">Password</span>

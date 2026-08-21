@@ -70,7 +70,7 @@ export default function IbeQuote() {
 
   return (
     <>
-      <SectionHeader title="Free Quote" subtitle="Get a fast, personalized estimate for your Madison or metro-Jackson property — no obligation." image={HERO} />
+      <SectionHeader title="Free Quote" subtitle="Get a fast, personalized estimate for your Centre or Cherokee County property — no obligation." image={HERO} />
       <section className="bg-ibe-bone py-20">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           {done ? (

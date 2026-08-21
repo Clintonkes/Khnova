@@ -4,6 +4,7 @@ export const KH = {
   name: "KH NOVA LLC",
   phone: "(256) 266-3221",
   phoneRaw: "+12562663221",
+  email: "info@khnovalawn.com",
   address: "123 Sherry DR, Centre, AL 35960",
   hours: "Mon–Sat · 7:00 AM – 6:00 PM",
   tagline: "Professional Lawn Care in Centre, AL",

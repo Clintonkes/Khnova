@@ -7,7 +7,7 @@ import CTASection from "@/components/CTASection";
 const HERO = "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/bc30b03e4_generated_image.png";
 
 const SERVICES = [
-  { n: "01", icon: Scissors, t: "Lawn Mowing & Maintenance", d: "Weekly and bi-weekly mowing with clean edging and blowing, tuned to Mississippi's long growing season.", points: ["Weekly / bi-weekly cuts", "Edging & blowing", "Clean, even lines"], img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/1c9beb1d1_generated_image.png" },
+  { n: "01", icon: Scissors, t: "Lawn Mowing & Maintenance", d: "Weekly and bi-weekly mowing with clean edging and blowing, tuned to Alabama's long growing season.", points: ["Weekly / bi-weekly cuts", "Edging & blowing", "Clean, even lines"], img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/1c9beb1d1_generated_image.png" },
   { n: "02", icon: Flower2, t: "Landscaping & Bed Care", d: "Mulch installation, shrub beds, plantings and bed maintenance that keep your yard looking polished.", points: ["Mulch installation", "Shrub & flower beds", "Plantings & refresh"], img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/bc30b03e4_generated_image.png" },
   { n: "03", icon: Sparkles, t: "Seasonal Clean-Up", d: "Spring and fall clean-ups, leaf and debris removal to keep your yard pristine all year.", points: ["Leaf removal", "Bed clearing", "Debris haul-off"], img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/5797068c3_generated_image.png" },
   { n: "04", icon: Trees, t: "Hedge & Shrub Trimming", d: "Shaping and pruning of hedges, shrubs and small trees for a neat, healthy landscape.", points: ["Hedge shaping", "Shrub pruning", "Size control"], img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/0ce5cc76c_generated_image.png" },
@@ -19,7 +19,7 @@ export default function IbeServices() {
   const fadeUp = { hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } };
   return (
     <>
-      <SectionHeader title="Our Services" subtitle="Full-service lawn care and landscaping for Madison and the greater metro-Jackson area." image={HERO} />
+      <SectionHeader title="Our Services" subtitle="Full-service lawn care and landscaping for Centre, AL and the greater Cherokee County area." image={HERO} />
       <section className="bg-ibe-bone py-20">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-8 space-y-16">
           {SERVICES.map((s, idx) => (

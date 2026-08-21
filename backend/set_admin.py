@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Set or update the admin login credentials for I&B Evergreen LLC.
+Set or update the admin login credentials for KH NOVA LLC.
 
 Usage:
     python backend/set_admin.py <email> <password>
 
 Examples:
-    python backend/set_admin.py admin@ibevergreenllc.com mypassword123
-    python backend/set_admin.py newemail@ibevergreenllc.com newpassword
+    python backend/set_admin.py admin@khnovalawn.com mypassword123
+    python backend/set_admin.py newemail@khnovalawn.com newpassword
 """
 
 import sys
@@ -34,7 +34,7 @@ def describe_target(url: str) -> str:
 def main():
     if len(sys.argv) != 3:
         print("Usage: python set_admin.py <email> <password>")
-        print("Example: python set_admin.py admin@ibevergreenllc.com mypassword123")
+        print("Example: python set_admin.py admin@khnovalawn.com mypassword123")
         sys.exit(1)
 
     email = sys.argv[1].strip()

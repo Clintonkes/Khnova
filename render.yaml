@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ib-evergreen-backend
+    name: khnova-backend
     runtime: docker
     dockerfilePath: ./Dockerfile
     envVars:

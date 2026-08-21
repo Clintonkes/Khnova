@@ -4,6 +4,7 @@ import { MapPin, CalendarCheck, BadgeDollarSign } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import CTASection from "@/components/CTASection";
 import NovaMark from "@/components/NovaMark";
+import { AREAS } from "@/lib/khnova";
 
 const HERO = "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/0ce5cc76c_generated_image.png";
 
@@ -35,31 +36,29 @@ function Stat({ value, suffix, label }) {
 }
 
 const VALUES = [
-  { icon: MapPin, t: "Madison Owned & Operated", d: "Family-owned and locally rooted — we know Mississippi lawns and what keeps them lush all season." },
+  { icon: MapPin, t: "Centre Owned & Operated", d: "Family-owned and locally rooted — we know Alabama lawns and what keeps them lush all season." },
   { icon: CalendarCheck, t: "Dependable Schedules", d: "Weekly and bi-weekly visits you can set your watch to. We show up on time, every time." },
   { icon: BadgeDollarSign, t: "Fair, Honest Pricing", d: "Clear, upfront quotes with no surprises. Quality yard care at a fair, honest rate." },
 ];
-
-const AREAS = ["Madison", "Ridgeland", "Jackson", "Brandon", "Flowood", "Gluckstadt"];
 
 export default function IbeAbout() {
   const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } };
   return (
     <>
-      <SectionHeader title="About Us" subtitle="Family-owned lawncare and landscaping, rooted in Madison, Mississippi." image={HERO} />
+      <SectionHeader title="About Us" subtitle="Family-owned lawn care, rooted in Centre, Alabama." image={HERO} />
 
       <section className="bg-ibe-cream py-20">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.6 }}>
             <span className="text-knova-cyan font-mulish text-sm font-bold tracking-[0.25em] uppercase">Our Story</span>
-            <h2 className="font-lora text-knova-midnight text-3xl md:text-4xl font-bold mt-3 mb-5">Fifteen years of keeping Madison green.</h2>
+            <h2 className="font-lora text-knova-midnight text-3xl md:text-4xl font-bold mt-3 mb-5">Eight years of keeping Centre green.</h2>
             <div className="space-y-4 text-ibe-bark/70 font-mulish text-lg leading-relaxed">
-              <p>I&B Evergreen LLC started as a single mower and a handful of neighbors who needed a lawn crew they could trust. Fifteen years later we're still family-owned, still local, and still showing up on time — now caring for over 600 lawns across Madison and the greater metro-Jackson area.</p>
-              <p>We know how Mississippi's long growing season, humidity, and clay soil treat a yard, because we've been working in it since day one. That local know-how shapes every mow, bed, and clean-up we do.</p>
+              <p>KH NOVA LLC started as a single mower and a handful of neighbors who needed a lawn crew they could trust. Eight years later we're still family-owned, still local, and still showing up on time — now caring for over 200 lawns across Centre, AL and Cherokee County.</p>
+              <p>We know how Alabama's long growing season, humidity, and clay soil treat a yard, because we've been working in it since day one. That local know-how shapes every mow, bed, and clean-up we do.</p>
             </div>
           </motion.div>
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg shadow-ibe-bark/10">
-            <img src="https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/1c9beb1d1_generated_image.png" alt="I&B Evergreen crew at work" className="w-full h-full object-cover" />
+            <img src="https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/1c9beb1d1_generated_image.png" alt="KH NOVA crew at work" className="w-full h-full object-cover" />
             <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-knova-midnight grid place-items-center"><NovaMark className="text-knova-cyan" size={22} /></div>
           </motion.div>
         </div>
@@ -68,9 +67,9 @@ export default function IbeAbout() {
       <section className="bg-knova-midnight py-24">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            <Stat value={15} suffix="+" label="Years Local" />
-            <Stat value={600} suffix="+" label="Lawns Served" />
-            <Stat value={48} suffix="" label="Hr Response" />
+            <Stat value={8} suffix="+" label="Years Local" />
+            <Stat value={200} suffix="+" label="Lawns Served" />
+            <Stat value={24} suffix="" label="Hr Quote Turnaround" />
             <Stat value={100} suffix="%" label="Satisfaction" />
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -88,7 +87,7 @@ export default function IbeAbout() {
       <section className="bg-ibe-bone py-20">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-8 text-center">
           <span className="text-knova-cyan font-mulish text-sm font-bold tracking-[0.25em] uppercase">Where We Work</span>
-          <h2 className="font-lora text-knova-midnight text-3xl md:text-4xl font-bold mt-3 mb-10">Proudly serving metro-Jackson.</h2>
+          <h2 className="font-lora text-knova-midnight text-3xl md:text-4xl font-bold mt-3 mb-10">Proudly serving Cherokee County.</h2>
           <div className="flex flex-wrap justify-center gap-3">
             {AREAS.map((a) => (
               <span key={a} className="px-5 py-2.5 rounded-full bg-ibe-cream border border-ibe-bark/10 font-mulish font-semibold text-ibe-bark">{a}</span>
